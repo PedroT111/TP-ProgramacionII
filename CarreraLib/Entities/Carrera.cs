@@ -8,5 +8,22 @@ namespace CarreraLib.Entities
 {
     class Carrera
     {
+        public string Nombre { get; set; }
+        public string Titulo { get; set; }
+        public List<DetalleCarrera> Detalles { get; set; }
+
+        public Carrera()
+        {
+            Detalles = new List<DetalleCarrera>();
+        }
+
+        public void AddDetalle(DetalleCarrera detalle)
+        {
+            Detalles.Add(detalle);
+        }
+        public void RemoveDetalle(int indice)
+        {
+            Detalles.RemoveAt(indice);
+        }
     }
 }
