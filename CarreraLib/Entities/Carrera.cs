@@ -8,6 +8,7 @@ namespace CarreraLib.Entities
 {
     class Carrera
     {
+        public int IdCarrera { get; set; }
         public string Nombre { get; set; }
         public string Titulo { get; set; }
         public List<DetalleCarrera> Detalles { get; set; }

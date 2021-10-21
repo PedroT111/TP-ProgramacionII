@@ -1,0 +1,12 @@
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\bin\Debug\net5.0\CarreraLib.deps.json
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\bin\Debug\net5.0\CarreraLib.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\bin\Debug\net5.0\ref\CarreraLib.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\bin\Debug\net5.0\CarreraLib.pdb
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.csproj.AssemblyReference.cache
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.AssemblyInfoInputs.cache
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.AssemblyInfo.cs
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.csproj.CoreCompileInputs.cache
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\ref\CarreraLib.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.pdb

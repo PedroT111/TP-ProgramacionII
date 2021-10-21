@@ -1,0 +1,16 @@
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.csproj.AssemblyReference.cache
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.AssemblyInfoInputs.cache
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.AssemblyInfo.cs
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.csproj.CoreCompileInputs.cache
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\CarreraSLN.exe
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\CarreraSLN.deps.json
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\CarreraSLN.runtimeconfig.json
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\CarreraSLN.runtimeconfig.dev.json
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\CarreraSLN.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\ref\CarreraSLN.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\CarreraSLN.pdb
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\ref\CarreraSLN.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.pdb
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.genruntimeconfig.cache

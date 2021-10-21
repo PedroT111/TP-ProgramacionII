@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CarreraLib.Entities
 {
-    class Materia
+    public class Materia
     {
+        public int IdMateria { get; set; }
         public string NombreMateria { get; set; }
 
         public Materia()
