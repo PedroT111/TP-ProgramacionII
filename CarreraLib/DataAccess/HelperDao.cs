@@ -46,7 +46,7 @@ namespace CarreraLib.DataAccess
 
         public DataTable ConsultaSQL(string nombreSP)
         {
-            DataTable tabla = new DataTable();
+            DataTable tabla = new();
             try
             {
                 cmd.Parameters.Clear();

@@ -10,6 +10,7 @@ namespace CarreraLib.DataAccess
     interface ICarreraDao
     {
         public List<Materia> GetMaterias();
+        public List<Carrera> GetCarrera();
 
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarreraLib.Entities
 {
-    class DetalleCarrera
+    public class DetalleCarrera
     {
         public int AnioCursado { get; set; }
         public int Cuatrimestre { get; set; }

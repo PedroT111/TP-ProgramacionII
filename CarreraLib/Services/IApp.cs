@@ -10,5 +10,6 @@ namespace CarreraLib.Services
     public interface IApp
     {
         public List<Materia> ConsultarMaterias();
+        public List<Carrera> ConsultarCarreras();
     }
 }

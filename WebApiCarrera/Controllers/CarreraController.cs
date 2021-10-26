@@ -25,5 +25,10 @@ namespace WebApiCarrera.Controllers
         {
             return Ok(app.ConsultarMaterias());
         }
+        [HttpGet("carreras")]
+        public ActionResult GetCarreras()
+        {
+            return Ok(app.ConsultarCarreras());
+        }
     }
 }

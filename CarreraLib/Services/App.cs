@@ -20,5 +20,9 @@ namespace CarreraLib.Services
         {
             return dao.GetMaterias();
         }
+        public List<Carrera> ConsultarCarreras()
+        {
+            return dao.GetCarrera();
+        }
     }
 }

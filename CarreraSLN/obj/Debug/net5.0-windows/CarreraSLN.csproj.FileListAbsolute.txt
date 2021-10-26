@@ -14,3 +14,15 @@ C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\ref\CarreraSLN.dll
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.pdb
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.genruntimeconfig.cache
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\CarreraLib.dll
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows\CarreraLib.pdb
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.Forms.FrmMain.resources
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.Forms.FrmNuevoPlanEstudio.resources
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.csproj.GenerateResource.cache
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.csproj.CopyComplete

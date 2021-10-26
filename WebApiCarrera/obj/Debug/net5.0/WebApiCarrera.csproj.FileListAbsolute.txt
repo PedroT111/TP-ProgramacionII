@@ -30,8 +30,8 @@ C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\stat
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\staticwebassets\WebApiCarrera.StaticWebAssets.xml
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\scopedcss\bundle\WebApiCarrera.styles.css
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\WebApiCarrera.RazorTargetAssemblyInfo.cache
-C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\WebApiCarrera.csproj.CopyComplete
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\WebApiCarrera.dll
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\ref\WebApiCarrera.dll
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\WebApiCarrera.pdb
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\WebApiCarrera.genruntimeconfig.cache
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\WebApiCarrera.csproj.CopyComplete
