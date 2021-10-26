@@ -36,7 +36,7 @@ namespace CarreraSLN.Forms
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboMaterias = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id_detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,13 +110,13 @@ namespace CarreraSLN.Forms
             this.comboBox1.Size = new System.Drawing.Size(860, 40);
             this.comboBox1.TabIndex = 6;
             // 
-            // comboBox2
+            // cboMaterias
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(265, 136);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(860, 40);
-            this.comboBox2.TabIndex = 7;
+            this.cboMaterias.FormattingEnabled = true;
+            this.cboMaterias.Location = new System.Drawing.Point(265, 136);
+            this.cboMaterias.Name = "cboMaterias";
+            this.cboMaterias.Size = new System.Drawing.Size(860, 40);
+            this.cboMaterias.TabIndex = 7;
             // 
             // dataGridView1
             // 
@@ -196,7 +196,7 @@ namespace CarreraSLN.Forms
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cboMaterias);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -206,6 +206,7 @@ namespace CarreraSLN.Forms
             this.Controls.Add(this.label1);
             this.Name = "FrmNuevoPlanEstudio";
             this.Text = "FrmNuevoPlanEstudio";
+            this.Load += new System.EventHandler(this.FrmNuevoPlanEstudio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -221,7 +222,7 @@ namespace CarreraSLN.Forms
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboMaterias;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_detalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_materia;
