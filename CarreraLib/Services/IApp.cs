@@ -11,5 +11,11 @@ namespace CarreraLib.Services
     {
         public List<Materia> ConsultarMaterias();
         public List<Carrera> ConsultarCarreras();
+
+        public bool CrearMateria(Materia oMateria);
+
+        public bool CrearCarrera(Carrera oCarrera);
+
+        public int getProximoIdCarrera();
     }
 }

@@ -12,5 +12,10 @@ namespace CarreraLib.DataAccess
         public List<Materia> GetMaterias();
         public List<Carrera> GetCarrera();
 
+        public bool CrearMateria(Materia oMateria);
+
+        public bool InsertarCarrera(Carrera oCarrera);
+
+        int ObtenerProximoNumero();
     }
 }

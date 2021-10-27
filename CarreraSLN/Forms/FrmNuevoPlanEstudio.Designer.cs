@@ -33,26 +33,28 @@ namespace CarreraSLN.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtCuatrimestre = new System.Windows.Forms.TextBox();
+            this.txtAnioCursado = new System.Windows.Forms.TextBox();
             this.cboMaterias = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDetalles = new System.Windows.Forms.DataGridView();
             this.id_detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anio_cursado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actions = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnGrabarPlan = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtCarreraName = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.lblnro = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(57, 45);
+            this.label1.Location = new System.Drawing.Point(57, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 45);
             this.label1.TabIndex = 0;
@@ -88,27 +90,19 @@ namespace CarreraSLN.Forms
             this.label4.TabIndex = 3;
             this.label4.Text = "Año Cursado";
             // 
-            // textBox1
+            // txtCuatrimestre
             // 
-            this.textBox1.Location = new System.Drawing.Point(265, 213);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(860, 39);
-            this.textBox1.TabIndex = 4;
+            this.txtCuatrimestre.Location = new System.Drawing.Point(265, 213);
+            this.txtCuatrimestre.Name = "txtCuatrimestre";
+            this.txtCuatrimestre.Size = new System.Drawing.Size(860, 39);
+            this.txtCuatrimestre.TabIndex = 4;
             // 
-            // textBox2
+            // txtAnioCursado
             // 
-            this.textBox2.Location = new System.Drawing.Point(265, 287);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(860, 39);
-            this.textBox2.TabIndex = 5;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(265, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(860, 40);
-            this.comboBox1.TabIndex = 6;
+            this.txtAnioCursado.Location = new System.Drawing.Point(265, 287);
+            this.txtAnioCursado.Name = "txtAnioCursado";
+            this.txtAnioCursado.Size = new System.Drawing.Size(239, 39);
+            this.txtAnioCursado.TabIndex = 5;
             // 
             // cboMaterias
             // 
@@ -118,21 +112,22 @@ namespace CarreraSLN.Forms
             this.cboMaterias.Size = new System.Drawing.Size(860, 40);
             this.cboMaterias.TabIndex = 7;
             // 
-            // dataGridView1
+            // dgvDetalles
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_detalle,
             this.nombre_materia,
             this.cuatrimestre,
             this.anio_cursado,
-            this.actions});
-            this.dataGridView1.Location = new System.Drawing.Point(57, 365);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.RowTemplate.Height = 41;
-            this.dataGridView1.Size = new System.Drawing.Size(1068, 360);
-            this.dataGridView1.TabIndex = 8;
+            this.Eliminar});
+            this.dgvDetalles.Location = new System.Drawing.Point(76, 404);
+            this.dgvDetalles.Name = "dgvDetalles";
+            this.dgvDetalles.RowHeadersWidth = 82;
+            this.dgvDetalles.RowTemplate.Height = 41;
+            this.dgvDetalles.Size = new System.Drawing.Size(1068, 360);
+            this.dgvDetalles.TabIndex = 8;
+            this.dgvDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalles_CellContentClick_1);
             // 
             // id_detalle
             // 
@@ -163,21 +158,23 @@ namespace CarreraSLN.Forms
             this.anio_cursado.Name = "anio_cursado";
             this.anio_cursado.Width = 200;
             // 
-            // actions
+            // Eliminar
             // 
-            this.actions.HeaderText = "Acciones";
-            this.actions.MinimumWidth = 10;
-            this.actions.Name = "actions";
-            this.actions.Width = 200;
+            this.Eliminar.HeaderText = "Acciones";
+            this.Eliminar.MinimumWidth = 10;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.Width = 200;
             // 
-            // button1
+            // btnGrabarPlan
             // 
-            this.button1.Location = new System.Drawing.Point(329, 791);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(237, 71);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGrabarPlan.Location = new System.Drawing.Point(329, 791);
+            this.btnGrabarPlan.Name = "btnGrabarPlan";
+            this.btnGrabarPlan.Size = new System.Drawing.Size(237, 71);
+            this.btnGrabarPlan.TabIndex = 9;
+            this.btnGrabarPlan.Text = "Aceptar";
+            this.btnGrabarPlan.UseVisualStyleBackColor = true;
+            this.btnGrabarPlan.Click += new System.EventHandler(this.btnGrabarPlan_Click);
             // 
             // button2
             // 
@@ -188,18 +185,45 @@ namespace CarreraSLN.Forms
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // txtCarreraName
+            // 
+            this.txtCarreraName.Location = new System.Drawing.Point(265, 58);
+            this.txtCarreraName.Name = "txtCarreraName";
+            this.txtCarreraName.Size = new System.Drawing.Size(859, 39);
+            this.txtCarreraName.TabIndex = 11;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(822, 287);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(280, 57);
+            this.btnAgregar.TabIndex = 12;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // lblnro
+            // 
+            this.lblnro.AutoSize = true;
+            this.lblnro.Location = new System.Drawing.Point(583, 322);
+            this.lblnro.Name = "lblnro";
+            this.lblnro.Size = new System.Drawing.Size(0, 32);
+            this.lblnro.TabIndex = 13;
+            // 
             // FrmNuevoPlanEstudio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1192, 874);
+            this.ClientSize = new System.Drawing.Size(1211, 874);
+            this.Controls.Add(this.lblnro);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.txtCarreraName);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnGrabarPlan);
+            this.Controls.Add(this.dgvDetalles);
             this.Controls.Add(this.cboMaterias);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAnioCursado);
+            this.Controls.Add(this.txtCuatrimestre);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -207,7 +231,7 @@ namespace CarreraSLN.Forms
             this.Name = "FrmNuevoPlanEstudio";
             this.Text = "FrmNuevoPlanEstudio";
             this.Load += new System.EventHandler(this.FrmNuevoPlanEstudio_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,17 +243,19 @@ namespace CarreraSLN.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtCuatrimestre;
+        private System.Windows.Forms.TextBox txtAnioCursado;
         private System.Windows.Forms.ComboBox cboMaterias;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDetalles;
+        private System.Windows.Forms.Button btnGrabarPlan;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtCarreraName;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_detalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuatrimestre;
         private System.Windows.Forms.DataGridViewTextBoxColumn anio_cursado;
-        private System.Windows.Forms.DataGridViewButtonColumn actions;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.Label lblnro;
     }
 }

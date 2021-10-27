@@ -24,5 +24,20 @@ namespace CarreraLib.Services
         {
             return dao.GetCarrera();
         }
+
+        public bool CrearMateria(Materia oMateria)
+        {
+            return dao.CrearMateria(oMateria);
+        }
+
+        public bool CrearCarrera(Carrera oCarrera)
+        {
+            return dao.InsertarCarrera(oCarrera);
+        }
+
+        public int getProximoIdCarrera()
+        {
+            return dao.ObtenerProximoNumero();
+        }
     }
 }

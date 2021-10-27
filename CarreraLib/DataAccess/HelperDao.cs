@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CarreraLib.Entities;
+using CarreraLib.Services;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -66,5 +68,122 @@ namespace CarreraLib.DataAccess
             }
             return tabla;
         }
+        public int ConsultaConParametroEntrada(string nombreSP, List<Parametro> parametros)
+        {
+            int filas = 0;
+            try
+            {
+                cmd.Parameters.Clear();
+                cnn.Open();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = nombreSP;
+
+                foreach (Parametro p in parametros)
+                {
+                    cmd.Parameters.AddWithValue(p.Nombre, p.Valor);
+                }
+
+                filas = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                filas=0;
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open) cnn.Close();
+            }
+
+            return filas;
+        }
+
+        public bool EjecutarSQLMaestroDetalle(string spMaestro, string spDetalle, Carrera oCarrera)
+        {
+            bool ok = true;
+            SqlTransaction trans = null;
+
+            try
+            {
+                cmd.Parameters.Clear();
+                cnn.Open();
+                trans = cnn.BeginTransaction();
+                cmd.Connection = cnn;
+                cmd.Transaction = trans;
+                cmd.CommandText = spMaestro;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+              
+                cmd.Parameters.AddWithValue("@nombre_carrera", oCarrera.Nombre);
+                cmd.Parameters.AddWithValue("@id_carrera", oCarrera.IdCarrera);
+                cmd.ExecuteNonQuery();
+
+               
+                foreach (DetalleCarrera item in oCarrera.Detalles)
+                {
+                    SqlCommand cmdDet = new SqlCommand();
+                    cmdDet.Connection = cnn;
+                    cmdDet.Transaction = trans;
+                    cmdDet.CommandText = spDetalle;
+                    cmdDet.CommandType = CommandType.StoredProcedure;
+
+                    cmdDet.Parameters.AddWithValue("@anio_cursadp", item.AnioCursado);
+                    cmdDet.Parameters.AddWithValue("@cuatrimestre", item.Cuatrimestre);
+                    cmdDet.Parameters.AddWithValue("@id_materia", item.Materia.IdMateria);
+                    cmdDet.Parameters.AddWithValue("@id_carrera", oCarrera.IdCarrera);
+
+                    cmdDet.ExecuteNonQuery();
+                }
+
+                trans.Commit();
+            }
+            catch (Exception)
+            {
+                trans.Rollback();
+                ok = false;
+            }
+            finally
+            {
+                if (cnn != null && cnn.State == ConnectionState.Open) cnn.Close();
+            }
+
+            return ok;
+        }
+
+        public int EjecutarSQLConValorOUT(string nombreSP, string nombreParametro)
+        {
+            SqlParameter param = new SqlParameter(nombreParametro, SqlDbType.Int);
+            int val;
+            try
+            {
+                cnn.Open();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = nombreSP;
+                param.ParameterName = nombreParametro;
+                param.SqlDbType = SqlDbType.Int;
+                param.Direction = ParameterDirection.Output;
+
+                cmd.Parameters.Add(param);
+                cmd.ExecuteScalar();
+                val = (int)param.Value;
+
+            }
+            catch (SqlException)
+            {
+                val = 0;
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
+
+            return val;
+        }
+
+
     }
 }
