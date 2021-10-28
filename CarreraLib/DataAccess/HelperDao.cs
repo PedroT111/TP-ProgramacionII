@@ -17,14 +17,12 @@ namespace CarreraLib.DataAccess
         private string strConnection;
         public SqlConnection cnn { get; }
         public SqlCommand cmd { get; }
-        private DataTable table { get; set; }
 
         private HelperDao()
         {
             strConnection = @"Data Source=DESKTOP-0QHUI5R\SQLEXPRESS;Initial Catalog=TP_PROGII;Integrated Security=True";
             cnn = new SqlConnection(strConnection);
             cmd = new SqlCommand();
-            table = new DataTable();
         }
 
         public static HelperDao GetInstance()
@@ -113,9 +111,8 @@ namespace CarreraLib.DataAccess
                 cmd.CommandText = spMaestro;
                 cmd.CommandType = CommandType.StoredProcedure;
 
-              
-                cmd.Parameters.AddWithValue("@nombre_carrera", oCarrera.Nombre);
-                cmd.Parameters.AddWithValue("@id_carrera", oCarrera.IdCarrera);
+                cmd.Parameters.AddWithValue("id_carrera", Convert.ToInt32(oCarrera.IdCarrera));
+                cmd.Parameters.AddWithValue("@nombre", oCarrera.Nombre.ToString());
                 cmd.ExecuteNonQuery();
 
                
@@ -127,10 +124,10 @@ namespace CarreraLib.DataAccess
                     cmdDet.CommandText = spDetalle;
                     cmdDet.CommandType = CommandType.StoredProcedure;
 
-                    cmdDet.Parameters.AddWithValue("@anio_cursadp", item.AnioCursado);
-                    cmdDet.Parameters.AddWithValue("@cuatrimestre", item.Cuatrimestre);
-                    cmdDet.Parameters.AddWithValue("@id_materia", item.Materia.IdMateria);
-                    cmdDet.Parameters.AddWithValue("@id_carrera", oCarrera.IdCarrera);
+                    cmdDet.Parameters.AddWithValue("@anio_cursado", Convert.ToInt32(item.AnioCursado));
+                    cmdDet.Parameters.AddWithValue("@cuatrimestre", Convert.ToInt32(item.Cuatrimestre));
+                    cmdDet.Parameters.AddWithValue("@id_materia", Convert.ToInt32(item.Materia.IdMateria));
+                    cmdDet.Parameters.AddWithValue("@id_carrera", Convert.ToInt32(oCarrera.IdCarrera));
 
                     cmdDet.ExecuteNonQuery();
                 }

@@ -33,6 +33,7 @@ namespace CarreraSLN.Forms
         private async void FrmNuevoPlanEstudio_Load(object sender, EventArgs e)
         {
             await cargarComboMateriasAsync();
+            await AsignarNumeroCarreraAsync();
         }
 
         private async Task cargarComboMateriasAsync()
@@ -57,7 +58,6 @@ namespace CarreraSLN.Forms
             {
                 var result = await cliente.GetStringAsync(url);
                 oCarrera.IdCarrera = Int32.Parse(result);
-                lblnro.Text = "Nro:" + result;
             }
 
         }
@@ -130,9 +130,8 @@ namespace CarreraSLN.Forms
                 detalle.AnioCursado = Convert.ToInt32(txtAnioCursado.Text);
                 detalle.Cuatrimestre = Convert.ToInt32(txtCuatrimestre.Text);
                 detalle.Materia = oMateria;
-
                 oCarrera.AddDetalle(detalle);
-                dgvDetalles.Rows.Add(new object[] { "", oMateria.NombreMateria, detalle.Cuatrimestre.ToString(), detalle.AnioCursado.ToString()});
+                dgvDetalles.Rows.Add(new object[] {oMateria.IdMateria, oMateria.NombreMateria.ToString(), detalle.Cuatrimestre.ToString(), detalle.AnioCursado.ToString()});
             }
         }
 

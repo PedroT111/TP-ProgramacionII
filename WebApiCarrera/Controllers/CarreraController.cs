@@ -17,6 +17,8 @@ namespace WebApiCarrera.Controllers
         private IApp app;
         public CarreraController()
         {
+            //AbstractServiceFactory factory = new ServiceFactory();
+            //app = factory.crearService();
             app = new App();
         }
 
@@ -25,12 +27,6 @@ namespace WebApiCarrera.Controllers
         {
             return Ok(app.ConsultarMaterias());
         }
-        [HttpGet("carreras")]
-        public ActionResult GetCarreras()
-        {
-            return Ok(app.ConsultarCarreras());
-        }
-
         [HttpPost("materias")]
         public ActionResult PostMateria(Materia oMateria)
         {
@@ -41,6 +37,19 @@ namespace WebApiCarrera.Controllers
             else
                 return Ok("No se pudo grabar la materia");
         }
+
+        [HttpGet("carreras")]
+        public ActionResult GetCarreras()
+        {
+            return Ok(app.ConsultarCarreras());
+        }
+
+       /* [HttpGet("carreras")]
+        public ActionResult GetPlanDeEstudioPorId()
+        {
+            return Ok(app.ConsultarPlanPorId());
+        }*/
+
         [HttpPost("carreras")]
         public ActionResult PostCarrera(Carrera oCarrera)
         {

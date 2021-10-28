@@ -26,22 +26,6 @@ namespace CarreraLib.DataAccess
 
             return result;
         }
-
-        public List<Carrera> GetCarrera()
-        {
-            List<Carrera> lstCarrera = new List<Carrera>();
-            DataTable tabla = HelperDao.GetInstance().ConsultaSQL("CONSULTAR_CARRERAS");
-            foreach (DataRow row in tabla.Rows)
-            {
-                Carrera oCarrera = new Carrera();
-                oCarrera.IdCarrera = Convert.ToInt32(row["id_carrera"].ToString());
-                oCarrera.Nombre = row["nombre_carrera"].ToString();
-
-                lstCarrera.Add(oCarrera);
-            }
-            return lstCarrera;
-        }
-
         public List<Materia> GetMaterias()
         {
             List<Materia> lstMateria = new List<Materia>();
@@ -59,8 +43,29 @@ namespace CarreraLib.DataAccess
 
         public bool InsertarCarrera(Carrera oCarrera)
         {
-            return HelperDao.GetInstance().EjecutarSQLMaestroDetalle("SP_INSERTAR_MAESTRO", "SP_INSERTAR_DETALLE", oCarrera);
+            return HelperDao.GetInstance().EjecutarSQLMaestroDetalle("SP_INSERTAR_CARRERA", "SP_INSERTAR_DETALLE_CARRERA", oCarrera);
         }
+
+        public List<Carrera> GetCarrera()
+        {
+            List<Carrera> lstCarrera = new List<Carrera>();
+            DataTable tabla = HelperDao.GetInstance().ConsultaSQL("CONSULTAR_CARRERAS");
+            foreach (DataRow row in tabla.Rows)
+            {
+                Carrera oCarrera = new Carrera();
+                oCarrera.IdCarrera = Convert.ToInt32(row["id_carrera"].ToString());
+                oCarrera.Nombre = row["nombre_carrera"].ToString();
+
+                lstCarrera.Add(oCarrera);
+            }
+            return lstCarrera;
+        }
+
+        /*public List<Carrera> GetCarreraPorID()
+        {
+
+        }*/
+
 
         public int ObtenerProximoNumero()
         {
