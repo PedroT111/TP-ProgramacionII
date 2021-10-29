@@ -34,7 +34,6 @@ namespace CarreraSLN.Forms
             this.planesDeEstudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.carreraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planEstudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,12 +63,12 @@ namespace CarreraSLN.Forms
             this.planesDeEstudioToolStripMenuItem.Name = "planesDeEstudioToolStripMenuItem";
             this.planesDeEstudioToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.planesDeEstudioToolStripMenuItem.Text = "Planes de Estudio";
+            this.planesDeEstudioToolStripMenuItem.Click += new System.EventHandler(this.planesDeEstudioToolStripMenuItem_Click);
             // 
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.materiaToolStripMenuItem,
-            this.carreraToolStripMenuItem,
             this.planEstudioToolStripMenuItem});
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(105, 38);
@@ -81,17 +80,12 @@ namespace CarreraSLN.Forms
             this.materiaToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.materiaToolStripMenuItem.Text = "Materia";
             // 
-            // carreraToolStripMenuItem
-            // 
-            this.carreraToolStripMenuItem.Name = "carreraToolStripMenuItem";
-            this.carreraToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.carreraToolStripMenuItem.Text = "Carrera";
-            // 
             // planEstudioToolStripMenuItem
             // 
             this.planEstudioToolStripMenuItem.Name = "planEstudioToolStripMenuItem";
             this.planEstudioToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.planEstudioToolStripMenuItem.Text = "Plan Estudio";
+            this.planEstudioToolStripMenuItem.Click += new System.EventHandler(this.planEstudioToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -116,7 +110,6 @@ namespace CarreraSLN.Forms
         private System.Windows.Forms.ToolStripMenuItem planesDeEstudioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem materiaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem carreraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planEstudioToolStripMenuItem;
     }
 }

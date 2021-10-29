@@ -16,5 +16,17 @@ namespace CarreraSLN.Forms
         {
             InitializeComponent();
         }
+
+        private void planEstudioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmNuevoPlanEstudio frmPlan = new FrmNuevoPlanEstudio(Accion.Create, -1);
+            frmPlan.ShowDialog();
+        }
+
+        private void planesDeEstudioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultarPlanes frmConsulta = new FrmConsultarPlanes();
+            frmConsulta.ShowDialog();
+        }
     }
 }

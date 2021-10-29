@@ -13,27 +13,41 @@ using System.Windows.Forms;
 
 namespace CarreraSLN.Forms
 {
+    public enum Accion
+    {
+        Create,
+        Update,
+        Read,
+        Delete
+    }
     public partial class FrmNuevoPlanEstudio : Form
     {
         private Carrera oCarrera;
-        public FrmNuevoPlanEstudio()
+        private Accion modo;
+        public FrmNuevoPlanEstudio(Accion modo, int nro)
         {
             InitializeComponent();
             oCarrera = new Carrera();
+            this.modo = modo;
+
+            if (modo.Equals(Accion.Read))
+            {
+                btnAgregar.Enabled = false;
+                btnGrabarPlan.Enabled = false;
+                //Cargar presupuesto por nro
+            }
             
         }
-        public enum Accion
-        {
-            Create,
-            Update,
-            Read,
-            Delete
-        }
+       
 
         private async void FrmNuevoPlanEstudio_Load(object sender, EventArgs e)
         {
-            await cargarComboMateriasAsync();
-            await AsignarNumeroCarreraAsync();
+            if (modo.Equals(Accion.Create))
+            {
+                await cargarComboMateriasAsync();
+                await AsignarNumeroCarreraAsync();
+            }
+          
         }
 
         private async Task cargarComboMateriasAsync()
@@ -63,28 +77,29 @@ namespace CarreraSLN.Forms
         }
         private async void btnGrabarPlan_Click(object sender, EventArgs e)
         {
-            if (txtCarreraName.Text == "")
+            /*if (dgvDetalles.RowCount == 0)
+            {
+                MessageBox.Show("Debe ingresar al menos una materia", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboMaterias.Focus();
+                return;
+            }*/ //No funciona
+            if (txtCarreraName.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese un nombre de carrera", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtCarreraName.Focus();
                 return;
             }
-            if (dgvDetalles.Rows.Count == 0)
-            {
-                MessageBox.Show("Ingrese al menos una materia", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
             oCarrera.Nombre = txtCarreraName.Text;
             string data = JsonConvert.SerializeObject(oCarrera);
             bool success = await crearNuevoPlanAsync(data);
             if (success)
             {
-                MessageBox.Show("Carrera Registrada!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Plan de Estudio Registrado!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Dispose();
             }
             else
             {
-                MessageBox.Show("Error al registrar Carrera!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al registrar Plan de Estudio!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -123,6 +138,11 @@ namespace CarreraSLN.Forms
         {
             if (validarCampos())
             {
+               /* if (MateriaExists(cboMaterias.Text))
+                {
+                    MessageBox.Show("Ya existe esa materia en el plan", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }*/
                
                 Materia oMateria = (Materia)cboMaterias.SelectedItem;
                 DetalleCarrera detalle = new DetalleCarrera();
@@ -133,6 +153,16 @@ namespace CarreraSLN.Forms
                 oCarrera.AddDetalle(detalle);
                 dgvDetalles.Rows.Add(new object[] {oMateria.IdMateria, oMateria.NombreMateria.ToString(), detalle.Cuatrimestre.ToString(), detalle.AnioCursado.ToString()});
             }
+        }
+
+        private bool MateriaExists(string text)
+        {
+            foreach (DataGridViewRow item in dgvDetalles.Rows)
+            {
+                if (item.Cells["Materia"].Value.Equals(text))
+                    return true;
+            }
+            return false;
         }
 
         private void dgvDetalles_CellContentClick_1(object sender, DataGridViewCellEventArgs e)

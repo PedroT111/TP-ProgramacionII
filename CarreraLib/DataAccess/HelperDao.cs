@@ -20,7 +20,7 @@ namespace CarreraLib.DataAccess
 
         private HelperDao()
         {
-            strConnection = @"Data Source=DESKTOP-0QHUI5R\SQLEXPRESS;Initial Catalog=TP_PROGII;Integrated Security=True";
+            strConnection = @"Data Source=DESKTOP-0QHUI5R\SQLEXPRESS;Initial Catalog=TP_PROGII2;Integrated Security=True";
             cnn = new SqlConnection(strConnection);
             cmd = new SqlCommand();
         }
@@ -112,7 +112,7 @@ namespace CarreraLib.DataAccess
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("id_carrera", Convert.ToInt32(oCarrera.IdCarrera));
-                cmd.Parameters.AddWithValue("@nombre", oCarrera.Nombre.ToString());
+                cmd.Parameters.AddWithValue("@nombre", oCarrera.Nombre);
                 cmd.ExecuteNonQuery();
 
                
@@ -129,7 +129,7 @@ namespace CarreraLib.DataAccess
                     cmdDet.Parameters.AddWithValue("@id_materia", Convert.ToInt32(item.Materia.IdMateria));
                     cmdDet.Parameters.AddWithValue("@id_carrera", Convert.ToInt32(oCarrera.IdCarrera));
 
-                    cmdDet.ExecuteNonQuery();
+                   cmdDet.ExecuteNonQuery();
                 }
 
                 trans.Commit();
