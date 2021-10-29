@@ -42,5 +42,40 @@ namespace CarreraSLN.Forms
             };
 
         }
+
+        private async Task EliminarCarrerasAsync(int id)
+        {
+            string url = "https://localhost:5001/api/Carrera/" + id.ToString();
+            HttpClient client = new HttpClient();
+            var result = await client.DeleteAsync(url);
+            var responseContent = await result.Content.ReadAsStringAsync();
+
+        }
+
+        private async void dgvCarreras_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgvCarreras.CurrentCell.ColumnIndex == 2)
+            {
+                int nro = Convert.ToInt32(dgvCarreras.CurrentRow.Cells["nro_carrera"].Value.ToString());
+                FrmNuevoPlanEstudio form = new FrmNuevoPlanEstudio(Accion.Read, nro);
+                form.ShowDialog();
+            }
+            if(dgvCarreras.CurrentCell.ColumnIndex == 3)
+            {
+                int nro = Convert.ToInt32(dgvCarreras.CurrentRow.Cells["nro_carrera"].Value.ToString());
+                FrmNuevoPlanEstudio form = new FrmNuevoPlanEstudio(Accion.Update, nro);
+                form.ShowDialog();
+            }
+            if (dgvCarreras.CurrentCell.ColumnIndex == 4)
+            {
+                int nro = Convert.ToInt32(dgvCarreras.CurrentRow.Cells["nro_carrera"].Value.ToString());
+                if (MessageBox.Show("Seguro que desea eliminar el presupuesto seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    await EliminarCarrerasAsync(nro);
+                }
+
+               //VER COMO ACTUALIZAR LA LISTA
+            }
+        }
     }
 }

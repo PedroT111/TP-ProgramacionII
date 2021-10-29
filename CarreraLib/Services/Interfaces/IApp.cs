@@ -17,5 +17,9 @@ namespace CarreraLib.Services
         public bool CrearCarrera(Carrera oCarrera);
 
         public int getProximoIdCarrera();
+
+        public Carrera GetCarreraById(int id);
+
+        public bool DeleteCarrera(int id);
     }
 }

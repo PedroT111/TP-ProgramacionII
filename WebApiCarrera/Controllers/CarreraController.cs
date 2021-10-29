@@ -44,11 +44,13 @@ namespace WebApiCarrera.Controllers
             return Ok(app.ConsultarCarreras());
         }
 
-       /* [HttpGet("carreras")]
-        public ActionResult GetPlanDeEstudioPorId()
+        [HttpGet("{id}")]
+        public ActionResult GetPlanDeEstudioPorId(int id)
         {
-            return Ok(app.ConsultarPlanPorId());
-        }*/
+            if (id == 0)
+                return BadRequest("Id es requerido!");
+            return Ok(app.GetCarreraById(id));
+        }
 
         [HttpPost("carreras")]
         public ActionResult PostCarrera(Carrera oCarrera)
@@ -64,6 +66,14 @@ namespace WebApiCarrera.Controllers
         public string GetProximoNroCarera()
         {
             return app.getProximoIdCarrera().ToString();
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteCarrera(int id)
+        {
+            if (id == 0)
+                return BadRequest("Id es requerido!");
+            return Ok(app.DeleteCarrera(id));
         }
 
     }

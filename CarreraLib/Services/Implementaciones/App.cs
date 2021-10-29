@@ -39,5 +39,15 @@ namespace CarreraLib.Services
         {
             return dao.ObtenerProximoNumero();
         }
+
+        public Carrera GetCarreraById(int id)
+        {
+            return dao.GetCarreraById(id);
+        }
+
+        public bool DeleteCarrera(int id)
+        {
+            return dao.DeleteCarrera(id);
+        }
     }
 }

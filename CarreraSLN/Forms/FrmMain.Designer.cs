@@ -79,6 +79,7 @@ namespace CarreraSLN.Forms
             this.materiaToolStripMenuItem.Name = "materiaToolStripMenuItem";
             this.materiaToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.materiaToolStripMenuItem.Text = "Materia";
+            this.materiaToolStripMenuItem.Click += new System.EventHandler(this.materiaToolStripMenuItem_Click);
             // 
             // planEstudioToolStripMenuItem
             // 

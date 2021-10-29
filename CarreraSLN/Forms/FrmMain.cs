@@ -28,5 +28,11 @@ namespace CarreraSLN.Forms
             FrmConsultarPlanes frmConsulta = new FrmConsultarPlanes();
             frmConsulta.ShowDialog();
         }
+
+        private void materiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMaterias frmMateria = new FrmMaterias();
+            frmMateria.ShowDialog();
+        }
     }
 }

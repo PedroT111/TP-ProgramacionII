@@ -60,16 +60,60 @@ namespace CarreraLib.DataAccess
             }
             return lstCarrera;
         }
-
-        /*public List<Carrera> GetCarreraPorID()
-        {
-
-        }*/
-
-
         public int ObtenerProximoNumero()
         {
             return HelperDao.GetInstance().EjecutarSQLConValorOUT("SP_PROXIMO_ID_CARRERA", "@next");
+        }
+
+        public Carrera GetCarreraById(int id)
+        {
+
+            Carrera oCarrera = new();
+            DataTable tabla = new DataTable();
+            List<Parametro> parametros = new List<Parametro>();
+            parametros.Add(new Parametro("@nro", id));
+
+            tabla = HelperDao.GetInstance().GetConParametrosEntrada("SP_CONSULTAR_PLAN_POR_ID", parametros);
+
+            bool primerRegistro = true;
+
+            DataTableReader reader = tabla.CreateDataReader();
+
+            while (reader.Read())
+            {
+                if (primerRegistro)
+                {
+                    oCarrera.IdCarrera = Convert.ToInt32(reader["id_carrera"].ToString());
+                    oCarrera.Nombre = reader["nombre_carrera"].ToString();
+                    primerRegistro = false;
+                }
+                DetalleCarrera oDetalle = new DetalleCarrera();
+                Materia oMateria = new Materia();
+                oMateria.IdMateria = Convert.ToInt32(reader["id_materia"].ToString());
+                oMateria.NombreMateria = reader["nombre_materia"].ToString();
+                oDetalle.Materia = oMateria;
+                oDetalle.AnioCursado = Convert.ToInt32(reader["anio_cursado"].ToString());
+                oDetalle.Cuatrimestre = Convert.ToInt32(reader["cuatrimestre"].ToString());
+                oCarrera.AddDetalle(oDetalle);
+            }
+            return oCarrera;
+        }
+
+        public bool DeleteCarrera(int id)
+        {
+            List<Parametro> parametro = new List<Parametro>();
+            parametro.Add(new Parametro("@nro", id));
+            bool result = true;
+            int files = 0;
+
+            files = HelperDao.GetInstance().ConsultaConParametroEntrada("SP_ELIMINAR_PLAN_DE_ESTUDIO", parametro);
+
+            if (files == 0)
+            {
+                result = false;
+            }
+
+            return result;
         }
     }
 }

@@ -32,11 +32,39 @@ namespace CarreraSLN.Forms
 
             if (modo.Equals(Accion.Read))
             {
+                CargarPlanEstudioPorId(nro);
+                txtAnioCursado.Enabled = false;
+                txtCarreraName.Enabled = false;
+                txtCuatrimestre.Enabled = false;
                 btnAgregar.Enabled = false;
                 btnGrabarPlan.Enabled = false;
-                //Cargar presupuesto por nro
+                dgvDetalles.Enabled = false;
+                cboMaterias.Enabled = false;
+                this.Text = "Consulta Plan de Estudio";
             }
+
+            /*if (modo.Equals(Accion.Update))
+            {
+                this.Text = "Editar Plan de Estudio";
+                cargarComboMateriasAsync();
+            }*/
             
+        }
+
+        private async Task CargarPlanEstudioPorId(int nro)
+        {
+            string url = "https://localhost:5001/api/Carrera/" + nro.ToString();
+            HttpClient client = new HttpClient();
+            var result = await client.GetAsync(url);
+            var content = await result.Content.ReadAsStringAsync();
+            oCarrera= JsonConvert.DeserializeObject<Carrera>(content);
+
+            txtCarreraName.Text = oCarrera.Nombre;
+            dgvDetalles.Rows.Clear();
+            foreach (DetalleCarrera oDetalle in oCarrera.Detalles)
+            {
+                dgvDetalles.Rows.Add(new object[] { oDetalle.Materia.IdMateria, oDetalle.Materia.NombreMateria, oDetalle.Cuatrimestre, oDetalle.AnioCursado}); ;
+            }
         }
        
 
@@ -46,6 +74,7 @@ namespace CarreraSLN.Forms
             {
                 await cargarComboMateriasAsync();
                 await AsignarNumeroCarreraAsync();
+                this.Text = "Nuevo Plan de Estudio";
             }
           
         }
@@ -77,12 +106,6 @@ namespace CarreraSLN.Forms
         }
         private async void btnGrabarPlan_Click(object sender, EventArgs e)
         {
-            /*if (dgvDetalles.RowCount == 0)
-            {
-                MessageBox.Show("Debe ingresar al menos una materia", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cboMaterias.Focus();
-                return;
-            }*/ //No funciona
             if (txtCarreraName.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese un nombre de carrera", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -138,12 +161,7 @@ namespace CarreraSLN.Forms
         {
             if (validarCampos())
             {
-               /* if (MateriaExists(cboMaterias.Text))
-                {
-                    MessageBox.Show("Ya existe esa materia en el plan", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }*/
-               
+                //VALIDAR SI YA EXISTE LA MATERIA
                 Materia oMateria = (Materia)cboMaterias.SelectedItem;
                 DetalleCarrera detalle = new DetalleCarrera();
 
@@ -159,7 +177,7 @@ namespace CarreraSLN.Forms
         {
             foreach (DataGridViewRow item in dgvDetalles.Rows)
             {
-                if (item.Cells["Materia"].Value.Equals(text))
+                if (item.Cells["nombre_materia"].Value.Equals(text))
                     return true;
             }
             return false;

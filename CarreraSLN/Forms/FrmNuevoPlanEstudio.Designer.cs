@@ -168,7 +168,7 @@ namespace CarreraSLN.Forms
             // 
             // btnGrabarPlan
             // 
-            this.btnGrabarPlan.Location = new System.Drawing.Point(329, 791);
+            this.btnGrabarPlan.Location = new System.Drawing.Point(317, 791);
             this.btnGrabarPlan.Name = "btnGrabarPlan";
             this.btnGrabarPlan.Size = new System.Drawing.Size(237, 71);
             this.btnGrabarPlan.TabIndex = 9;
@@ -178,7 +178,7 @@ namespace CarreraSLN.Forms
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(616, 791);
+            this.button2.Location = new System.Drawing.Point(663, 791);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(237, 71);
             this.button2.TabIndex = 10;

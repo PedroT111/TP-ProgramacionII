@@ -33,6 +33,9 @@ namespace CarreraSLN.Forms
             this.dgvCarreras = new System.Windows.Forms.DataGridView();
             this.nro_carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom_carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ver_carrera = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.edit_carrera = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.delete_carrera = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarreras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,16 +50,22 @@ namespace CarreraSLN.Forms
             // 
             // dgvCarreras
             // 
+            this.dgvCarreras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvCarreras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvCarreras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCarreras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nro_carrera,
-            this.nom_carrera});
+            this.nom_carrera,
+            this.ver_carrera,
+            this.edit_carrera,
+            this.delete_carrera});
             this.dgvCarreras.Location = new System.Drawing.Point(46, 46);
             this.dgvCarreras.Name = "dgvCarreras";
             this.dgvCarreras.RowHeadersWidth = 82;
             this.dgvCarreras.RowTemplate.Height = 41;
             this.dgvCarreras.Size = new System.Drawing.Size(961, 456);
             this.dgvCarreras.TabIndex = 2;
+            this.dgvCarreras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarreras_CellContentClick);
             // 
             // nro_carrera
             // 
@@ -64,14 +73,38 @@ namespace CarreraSLN.Forms
             this.nro_carrera.MinimumWidth = 10;
             this.nro_carrera.Name = "nro_carrera";
             this.nro_carrera.Visible = false;
-            this.nro_carrera.Width = 600;
+            this.nro_carrera.Width = 10;
             // 
             // nom_carrera
             // 
             this.nom_carrera.HeaderText = "Carrera";
             this.nom_carrera.MinimumWidth = 10;
             this.nom_carrera.Name = "nom_carrera";
-            this.nom_carrera.Width = 200;
+            this.nom_carrera.Width = 135;
+            // 
+            // ver_carrera
+            // 
+            this.ver_carrera.HeaderText = "";
+            this.ver_carrera.MinimumWidth = 10;
+            this.ver_carrera.Name = "ver_carrera";
+            this.ver_carrera.Text = "";
+            this.ver_carrera.Width = 33;
+            // 
+            // edit_carrera
+            // 
+            this.edit_carrera.HeaderText = "";
+            this.edit_carrera.MinimumWidth = 10;
+            this.edit_carrera.Name = "edit_carrera";
+            this.edit_carrera.Text = "";
+            this.edit_carrera.Width = 33;
+            // 
+            // delete_carrera
+            // 
+            this.delete_carrera.HeaderText = "";
+            this.delete_carrera.MinimumWidth = 10;
+            this.delete_carrera.Name = "delete_carrera";
+            this.delete_carrera.Text = "";
+            this.delete_carrera.Width = 33;
             // 
             // FrmConsultarPlanes
             // 
@@ -100,5 +133,8 @@ namespace CarreraSLN.Forms
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nro_carrera;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom_carrera;
+        private System.Windows.Forms.DataGridViewButtonColumn ver_carrera;
+        private System.Windows.Forms.DataGridViewButtonColumn edit_carrera;
+        private System.Windows.Forms.DataGridViewButtonColumn delete_carrera;
     }
 }
