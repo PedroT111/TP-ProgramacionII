@@ -177,55 +177,7 @@ namespace CarreraLib.DataAccess
 
             return ok;
         }
-        public bool EditarSQLMaestroDetalle(string spMaestro, string spDetalle, Carrera oCarrera)
-        {
-            bool ok = true;
-            SqlTransaction trans = null;
-
-            try
-            {
-                cmd.Parameters.Clear();
-                cnn.Open();
-                trans = cnn.BeginTransaction();
-                cmd.Connection = cnn;
-                cmd.Transaction = trans;
-                cmd.CommandText = spMaestro;
-                cmd.CommandType = CommandType.StoredProcedure;
-
                
-
-
-                foreach (DetalleCarrera item in oCarrera.Detalles)
-                {
-                    SqlCommand cmdDet = new SqlCommand();
-                    cmdDet.Connection = cnn;
-                    cmdDet.Transaction = trans;
-                    cmdDet.CommandText = spDetalle;
-                    cmdDet.CommandType = CommandType.StoredProcedure;
-
-                    cmdDet.Parameters.AddWithValue("@anio_cursado", Convert.ToInt32(item.AnioCursado));
-                    cmdDet.Parameters.AddWithValue("@cuatrimestre", Convert.ToInt32(item.Cuatrimestre));
-                    cmdDet.Parameters.AddWithValue("@id_materia", Convert.ToInt32(item.Materia.IdMateria));
-                    cmdDet.Parameters.AddWithValue("@id_carrera", Convert.ToInt32(oCarrera.IdCarrera));
-
-                    cmdDet.ExecuteNonQuery();
-                }
-
-                trans.Commit();
-            }
-            catch (Exception)
-            {
-                trans.Rollback();
-                ok = false;
-            }
-            finally
-            {
-                if (cnn != null && cnn.State == ConnectionState.Open) cnn.Close();
-            }
-
-            return ok;
-        }
-
         public int EjecutarSQLConValorOUT(string nombreSP, string nombreParametro)
         {
             SqlParameter param = new SqlParameter(nombreParametro, SqlDbType.Int);

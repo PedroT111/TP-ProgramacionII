@@ -49,5 +49,15 @@ namespace CarreraLib.Services
         {
             return dao.DeleteCarrera(id);
         }
+
+        public bool EditarCarrera(int id, Carrera oCarrera)
+        {
+            return dao.EditCarrera(id, oCarrera);
+        }
+
+        public bool DeleteMateria(int id)
+        {
+            return dao.DeleteMateria(id);
+        }
     }
 }

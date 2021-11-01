@@ -34,4 +34,3 @@ C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\WebA
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\ref\WebApiCarrera.dll
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\WebApiCarrera.pdb
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\WebApiCarrera.genruntimeconfig.cache
-C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\WebApiCarrera\obj\Debug\net5.0\WebApiCarrera.csproj.CopyComplete

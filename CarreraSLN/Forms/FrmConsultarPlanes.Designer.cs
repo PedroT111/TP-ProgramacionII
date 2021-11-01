@@ -50,6 +50,7 @@ namespace CarreraSLN.Forms
             // 
             // dgvCarreras
             // 
+            this.dgvCarreras.AllowUserToDeleteRows = false;
             this.dgvCarreras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvCarreras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvCarreras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -61,6 +62,7 @@ namespace CarreraSLN.Forms
             this.delete_carrera});
             this.dgvCarreras.Location = new System.Drawing.Point(46, 46);
             this.dgvCarreras.Name = "dgvCarreras";
+            this.dgvCarreras.ReadOnly = true;
             this.dgvCarreras.RowHeadersWidth = 82;
             this.dgvCarreras.RowTemplate.Height = 41;
             this.dgvCarreras.Size = new System.Drawing.Size(961, 456);
@@ -72,6 +74,7 @@ namespace CarreraSLN.Forms
             this.nro_carrera.HeaderText = "";
             this.nro_carrera.MinimumWidth = 10;
             this.nro_carrera.Name = "nro_carrera";
+            this.nro_carrera.ReadOnly = true;
             this.nro_carrera.Visible = false;
             this.nro_carrera.Width = 10;
             // 
@@ -80,31 +83,35 @@ namespace CarreraSLN.Forms
             this.nom_carrera.HeaderText = "Carrera";
             this.nom_carrera.MinimumWidth = 10;
             this.nom_carrera.Name = "nom_carrera";
+            this.nom_carrera.ReadOnly = true;
             this.nom_carrera.Width = 135;
             // 
             // ver_carrera
             // 
-            this.ver_carrera.HeaderText = "";
+            this.ver_carrera.HeaderText = "VER";
             this.ver_carrera.MinimumWidth = 10;
             this.ver_carrera.Name = "ver_carrera";
-            this.ver_carrera.Text = "";
-            this.ver_carrera.Width = 33;
+            this.ver_carrera.ReadOnly = true;
+            this.ver_carrera.Text = "Ver";
+            this.ver_carrera.Width = 61;
             // 
             // edit_carrera
             // 
-            this.edit_carrera.HeaderText = "";
+            this.edit_carrera.HeaderText = "EDITAR";
             this.edit_carrera.MinimumWidth = 10;
             this.edit_carrera.Name = "edit_carrera";
+            this.edit_carrera.ReadOnly = true;
             this.edit_carrera.Text = "";
-            this.edit_carrera.Width = 33;
+            this.edit_carrera.Width = 95;
             // 
             // delete_carrera
             // 
-            this.delete_carrera.HeaderText = "";
+            this.delete_carrera.HeaderText = "ELIMINAR";
             this.delete_carrera.MinimumWidth = 10;
             this.delete_carrera.Name = "delete_carrera";
+            this.delete_carrera.ReadOnly = true;
             this.delete_carrera.Text = "";
-            this.delete_carrera.Width = 33;
+            this.delete_carrera.Width = 124;
             // 
             // FrmConsultarPlanes
             // 

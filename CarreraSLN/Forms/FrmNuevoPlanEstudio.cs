@@ -43,11 +43,12 @@ namespace CarreraSLN.Forms
                 this.Text = "Consulta Plan de Estudio";
             }
 
-            /*if (modo.Equals(Accion.Update))
+            if (modo.Equals(Accion.Update))
             {
                 this.Text = "Editar Plan de Estudio";
+                CargarPlanEstudioPorId(nro);
                 cargarComboMateriasAsync();
-            }*/
+            }
             
         }
 
@@ -114,18 +115,50 @@ namespace CarreraSLN.Forms
             }
             oCarrera.Nombre = txtCarreraName.Text;
             string data = JsonConvert.SerializeObject(oCarrera);
-            bool success = await crearNuevoPlanAsync(data);
-            if (success)
-            {
-                MessageBox.Show("Plan de Estudio Registrado!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Dispose();
+            if (modo.Equals(Accion.Create))
+            {              
+                bool success = await crearNuevoPlanAsync(data);
+                if (success)
+                {
+                    MessageBox.Show("Plan de Estudio Registrado!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar Plan de Estudio!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            if (modo.Equals(Accion.Update))
             {
-                MessageBox.Show("Error al registrar Plan de Estudio!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                int id = oCarrera.IdCarrera;                
+                bool success = await EditarPlanEstudioAsync(data, id);
+                if (success)
+                {
+                    MessageBox.Show("Se ha actualizado el Plan de Estudio!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar Plan de Estudio!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
+                
+            
 
         }
+         private async Task<bool> EditarPlanEstudioAsync(string data, int id)
+         {
+             string url = "https://localhost:5001/api/Carrera/carreras" + id.ToString();
+             using (HttpClient client = new HttpClient())
+             {
+                 StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
+                 var result = await client.PutAsync(url, content);
+                 string response = await result.Content.ReadAsStringAsync();
+                 return response.Equals("Ok");
+             }
+
+         }
         private async Task<bool> crearNuevoPlanAsync(string data)
         {
             string url = "https://localhost:5001/api/Carrera/carreras";

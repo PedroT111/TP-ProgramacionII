@@ -35,7 +35,7 @@ namespace CarreraSLN.Forms
 
             foreach (Materia item in lst)
             {
-                lstMaterias.Items.Add(item.ToString());
+                dgvMaterias.Rows.Add(new object[] { item.IdMateria, item.NombreMateria.ToString()});
             };
 
         }
@@ -60,11 +60,11 @@ namespace CarreraSLN.Forms
                 MessageBox.Show("Ingrese un nombre");
                 return;
             }
-            if (existeMateria(txtMateria.Text))
+            /*if (existeMateria(txtMateria.Text.ToString()))
             {
                 MessageBox.Show("La materia ya esta registrada");
                 return;
-            }
+            }*/
             Materia oMateria = new Materia();
             oMateria.NombreMateria = txtMateria.Text;
             string data = JsonConvert.SerializeObject(oMateria);
@@ -92,15 +92,30 @@ namespace CarreraSLN.Forms
         {
             this.Dispose();
         }
-
-        private bool existeMateria(string text)
+        /*private bool existeMateria(string text)
         {
-            for (int i = 0; i < lstMaterias.Items.Count; i++)
+            foreach (DataGridViewRow item in dgvMaterias.Rows)
             {
-                if (lstMaterias.Items[i].Text.Equals(text))
+                if (item.Cells["nombre_materia"].Value.Equals(text))
                     return true;
             }
             return false;
+        }
+        */
+        private async Task EliminarMateriaAsync(int id)
+        {
+            string url = "https://localhost:5001/api/Carrera/materias/" + id.ToString();
+            HttpClient client = new HttpClient();
+            var result = await client.DeleteAsync(url);
+            var responseContent = await result.Content.ReadAsStringAsync();
+
+        }
+
+        private async void btnEliminarMateria_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvMaterias.CurrentRow.Cells["id_materia"].Value.ToString());
+            await EliminarMateriaAsync(id);
+            dgvMaterias.Rows.Remove(dgvMaterias.CurrentRow);
         }
     }
 }

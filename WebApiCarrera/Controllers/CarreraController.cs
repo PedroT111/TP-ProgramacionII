@@ -67,6 +67,13 @@ namespace WebApiCarrera.Controllers
         {
             return app.getProximoIdCarrera().ToString();
         }
+        [HttpPut("{id}")]
+        public ActionResult EditCarrera(int id, Carrera oCarrera)
+        {
+            if (id == 0)
+                return BadRequest("Id es requerido!");
+            return Ok(app.EditarCarrera(id, oCarrera));
+        }
 
         [HttpDelete("{id}")]
         public ActionResult DeleteCarrera(int id)
@@ -74,6 +81,14 @@ namespace WebApiCarrera.Controllers
             if (id == 0)
                 return BadRequest("Id es requerido!");
             return Ok(app.DeleteCarrera(id));
+        }
+
+        [HttpDelete("materias/{id}")]
+        public ActionResult DeleteMateria(int id)
+        {
+            if (id == 0)
+                return BadRequest("Id es requerido!");
+            return Ok(app.DeleteMateria(id));
         }
 
     }

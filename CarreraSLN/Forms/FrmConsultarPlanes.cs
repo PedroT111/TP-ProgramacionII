@@ -74,7 +74,9 @@ namespace CarreraSLN.Forms
                     await EliminarCarrerasAsync(nro);
                 }
 
-               //VER COMO ACTUALIZAR LA LISTA
+                dgvCarreras.Rows.Remove(dgvCarreras.CurrentRow);
+
+              
             }
         }
     }

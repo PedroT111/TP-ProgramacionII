@@ -16,10 +16,14 @@ namespace CarreraLib.DataAccess
 
         public bool CrearMateria(Materia oMateria);
 
+        public bool DeleteMateria(int id);
+
         public bool InsertarCarrera(Carrera oCarrera);
 
         public bool DeleteCarrera(int id);
 
         int ObtenerProximoNumero();
+
+        public bool EditCarrera(int id, Carrera oCarrera);
     }
 }
