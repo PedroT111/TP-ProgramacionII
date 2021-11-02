@@ -35,18 +35,22 @@ namespace CarreraSLN.Forms
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planEstudioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultarToolStripMenuItem,
             this.nuevoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(804, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(1300, 53);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -55,13 +59,13 @@ namespace CarreraSLN.Forms
             this.consultarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.planesDeEstudioToolStripMenuItem});
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(135, 38);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(183, 49);
             this.consultarToolStripMenuItem.Text = "Consultar";
             // 
             // planesDeEstudioToolStripMenuItem
             // 
             this.planesDeEstudioToolStripMenuItem.Name = "planesDeEstudioToolStripMenuItem";
-            this.planesDeEstudioToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.planesDeEstudioToolStripMenuItem.Size = new System.Drawing.Size(421, 54);
             this.planesDeEstudioToolStripMenuItem.Text = "Planes de Estudio";
             this.planesDeEstudioToolStripMenuItem.Click += new System.EventHandler(this.planesDeEstudioToolStripMenuItem_Click);
             // 
@@ -71,34 +75,48 @@ namespace CarreraSLN.Forms
             this.materiaToolStripMenuItem,
             this.planEstudioToolStripMenuItem});
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(105, 38);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(138, 49);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             // 
             // materiaToolStripMenuItem
             // 
             this.materiaToolStripMenuItem.Name = "materiaToolStripMenuItem";
-            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(344, 54);
             this.materiaToolStripMenuItem.Text = "Materia";
             this.materiaToolStripMenuItem.Click += new System.EventHandler(this.materiaToolStripMenuItem_Click);
             // 
             // planEstudioToolStripMenuItem
             // 
             this.planEstudioToolStripMenuItem.Name = "planEstudioToolStripMenuItem";
-            this.planEstudioToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.planEstudioToolStripMenuItem.Size = new System.Drawing.Size(344, 54);
             this.planEstudioToolStripMenuItem.Text = "Plan Estudio";
             this.planEstudioToolStripMenuItem.Click += new System.EventHandler(this.planEstudioToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CarreraSLN.Properties.Resources.utn;
+            this.pictureBox1.Location = new System.Drawing.Point(63, 144);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1172, 442);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 294);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1300, 709);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMain";
             this.Text = "FrmMain";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,5 +130,6 @@ namespace CarreraSLN.Forms
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem materiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planEstudioToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

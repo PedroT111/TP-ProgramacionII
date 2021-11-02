@@ -44,22 +44,24 @@ namespace CarreraSLN.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(381, 48);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(366, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 50);
+            this.label1.Size = new System.Drawing.Size(211, 59);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre ";
             // 
             // txtMateria
             // 
+            this.txtMateria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMateria.Location = new System.Drawing.Point(152, 132);
             this.txtMateria.Name = "txtMateria";
-            this.txtMateria.Size = new System.Drawing.Size(631, 39);
+            this.txtMateria.Size = new System.Drawing.Size(631, 50);
             this.txtMateria.TabIndex = 1;
             // 
             // btnCrearMateria
             // 
+            this.btnCrearMateria.Font = new System.Drawing.Font("Segoe UI Black", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCrearMateria.Location = new System.Drawing.Point(38, 750);
             this.btnCrearMateria.Name = "btnCrearMateria";
             this.btnCrearMateria.Size = new System.Drawing.Size(199, 83);
@@ -70,6 +72,7 @@ namespace CarreraSLN.Forms
             // 
             // btnEditarMateria
             // 
+            this.btnEditarMateria.Font = new System.Drawing.Font("Segoe UI Black", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEditarMateria.Location = new System.Drawing.Point(267, 752);
             this.btnEditarMateria.Name = "btnEditarMateria";
             this.btnEditarMateria.Size = new System.Drawing.Size(193, 81);
@@ -79,16 +82,20 @@ namespace CarreraSLN.Forms
             // 
             // btnEliminarMateria
             // 
+            this.btnEliminarMateria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnEliminarMateria.Font = new System.Drawing.Font("Segoe UI Black", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEliminarMateria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEliminarMateria.Location = new System.Drawing.Point(488, 752);
             this.btnEliminarMateria.Name = "btnEliminarMateria";
             this.btnEliminarMateria.Size = new System.Drawing.Size(193, 81);
             this.btnEliminarMateria.TabIndex = 5;
             this.btnEliminarMateria.Text = "Eliminar";
-            this.btnEliminarMateria.UseVisualStyleBackColor = true;
+            this.btnEliminarMateria.UseVisualStyleBackColor = false;
             this.btnEliminarMateria.Click += new System.EventHandler(this.btnEliminarMateria_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Black", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.Location = new System.Drawing.Point(709, 752);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(193, 81);
@@ -101,6 +108,7 @@ namespace CarreraSLN.Forms
             // 
             this.dgvMaterias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvMaterias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvMaterias.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_materia,
@@ -109,7 +117,7 @@ namespace CarreraSLN.Forms
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.RowHeadersWidth = 82;
             this.dgvMaterias.RowTemplate.Height = 41;
-            this.dgvMaterias.Size = new System.Drawing.Size(631, 493);
+            this.dgvMaterias.Size = new System.Drawing.Size(607, 493);
             this.dgvMaterias.TabIndex = 7;
             // 
             // id_materia
@@ -118,12 +126,13 @@ namespace CarreraSLN.Forms
             this.id_materia.MinimumWidth = 10;
             this.id_materia.Name = "id_materia";
             this.id_materia.Visible = false;
-            this.id_materia.Width = 156;
+            this.id_materia.Width = 117;
             // 
             // nombre_materia
             // 
+            this.nombre_materia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.nombre_materia.HeaderText = "Materia";
-            this.nombre_materia.MinimumWidth = 10;
+            this.nombre_materia.MinimumWidth = 140;
             this.nombre_materia.Name = "nombre_materia";
             this.nombre_materia.Width = 140;
             // 
@@ -131,6 +140,7 @@ namespace CarreraSLN.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(947, 860);
             this.Controls.Add(this.dgvMaterias);
             this.Controls.Add(this.btnCancelar);

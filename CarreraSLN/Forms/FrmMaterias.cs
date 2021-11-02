@@ -113,9 +113,14 @@ namespace CarreraSLN.Forms
 
         private async void btnEliminarMateria_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgvMaterias.CurrentRow.Cells["id_materia"].Value.ToString());
-            await EliminarMateriaAsync(id);
-            dgvMaterias.Rows.Remove(dgvMaterias.CurrentRow);
+            DialogResult dialogResult = MessageBox.Show("Desea borrar la materia? Se borrará de los Planes de Estudio", "Borrar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes) 
+            {
+                int id = Convert.ToInt32(dgvMaterias.CurrentRow.Cells["id_materia"].Value.ToString());
+                await EliminarMateriaAsync(id);
+                dgvMaterias.Rows.Remove(dgvMaterias.CurrentRow);
+            }
+             
         }
     }
 }

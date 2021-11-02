@@ -142,7 +142,7 @@ namespace CarreraLib.DataAccess
                 cmd.CommandText = spMaestro;
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("id_carrera", Convert.ToInt32(oCarrera.IdCarrera));
+                cmd.Parameters.AddWithValue("@id_carrera", Convert.ToInt32(oCarrera.IdCarrera));
                 cmd.Parameters.AddWithValue("@nombre", oCarrera.Nombre);
                 cmd.ExecuteNonQuery();
 

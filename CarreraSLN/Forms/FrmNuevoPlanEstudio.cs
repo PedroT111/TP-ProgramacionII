@@ -173,6 +173,12 @@ namespace CarreraSLN.Forms
 
         private bool validarCampos()
         {
+            if(cboMaterias.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione una materia", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                cboMaterias.Focus();
+                return false;
+            }
            
             if (txtAnioCursado.Text == "")
             {
@@ -186,15 +192,22 @@ namespace CarreraSLN.Forms
                 txtCuatrimestre.Focus();
                 return false;
             }
-
             return true;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (validarCampos())
+            /*if (validarCampos())
             {
-                //VALIDAR SI YA EXISTE LA MATERIA
+                foreach (DataGridViewRow row in dgvDetalles.Rows)
+                {
+                    if (row.Cells["materia"].Value.Equals(cboMaterias.Text))
+                    {
+                        MessageBox.Show("Ya existe la materia en el Plan", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                            
+                }
+            }*/
                 Materia oMateria = (Materia)cboMaterias.SelectedItem;
                 DetalleCarrera detalle = new DetalleCarrera();
 
@@ -203,18 +216,8 @@ namespace CarreraSLN.Forms
                 detalle.Materia = oMateria;
                 oCarrera.AddDetalle(detalle);
                 dgvDetalles.Rows.Add(new object[] {oMateria.IdMateria, oMateria.NombreMateria.ToString(), detalle.Cuatrimestre.ToString(), detalle.AnioCursado.ToString()});
-            }
         }
-
-        private bool MateriaExists(string text)
-        {
-            foreach (DataGridViewRow item in dgvDetalles.Rows)
-            {
-                if (item.Cells["nombre_materia"].Value.Equals(text))
-                    return true;
-            }
-            return false;
-        }
+ 
 
         private void dgvDetalles_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {

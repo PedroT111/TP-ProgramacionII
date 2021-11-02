@@ -79,5 +79,10 @@ namespace CarreraSLN.Forms
               
             }
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
