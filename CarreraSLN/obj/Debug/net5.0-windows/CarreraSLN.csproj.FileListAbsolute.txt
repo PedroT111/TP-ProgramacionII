@@ -29,3 +29,5 @@ C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\bin\Debug\net5.0-windows
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.Forms.FrmMaterias.resources
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.Forms.FrmConsultarPlanes.resources
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.Properties.Resources.resources
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.Forms.FormLogin.resources
+C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraSLN\obj\Debug\net5.0-windows\CarreraSLN.Forms.FrmInformacion.resources

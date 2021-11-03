@@ -197,17 +197,17 @@ namespace CarreraSLN.Forms
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            /*if (validarCampos())
+            if (validarCampos())
             {
-                foreach (DataGridViewRow row in dgvDetalles.Rows)
-                {
-                    if (row.Cells["materia"].Value.Equals(cboMaterias.Text))
-                    {
-                        MessageBox.Show("Ya existe la materia en el Plan", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                            
-                }
-            }*/
+                /* foreach (DataGridViewRow row in dgvDetalles.Rows)
+                 {
+                     if (row.Cells["materia"].Value.Equals(cboMaterias.Text))
+                     {
+                         MessageBox.Show("Ya existe la materia en el Plan", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                     }
+
+                 }*/
+
                 Materia oMateria = (Materia)cboMaterias.SelectedItem;
                 DetalleCarrera detalle = new DetalleCarrera();
 
@@ -215,7 +215,8 @@ namespace CarreraSLN.Forms
                 detalle.Cuatrimestre = Convert.ToInt32(txtCuatrimestre.Text);
                 detalle.Materia = oMateria;
                 oCarrera.AddDetalle(detalle);
-                dgvDetalles.Rows.Add(new object[] {oMateria.IdMateria, oMateria.NombreMateria.ToString(), detalle.Cuatrimestre.ToString(), detalle.AnioCursado.ToString()});
+                dgvDetalles.Rows.Add(new object[] { oMateria.IdMateria, oMateria.NombreMateria.ToString(), detalle.Cuatrimestre.ToString(), detalle.AnioCursado.ToString() });
+            }
         }
  
 
@@ -227,6 +228,11 @@ namespace CarreraSLN.Forms
                 dgvDetalles.Rows.Remove(dgvDetalles.CurrentRow);
             }
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     } 
 }

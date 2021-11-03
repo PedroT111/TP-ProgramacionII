@@ -37,16 +37,16 @@ namespace CarreraSLN.Forms
             this.txtAnioCursado = new System.Windows.Forms.TextBox();
             this.cboMaterias = new System.Windows.Forms.ComboBox();
             this.dgvDetalles = new System.Windows.Forms.DataGridView();
-            this.btnGrabarPlan = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txtCarreraName = new System.Windows.Forms.TextBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.lblnro = new System.Windows.Forms.Label();
             this.id_detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anio_cursado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnGrabarPlan = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtCarreraName = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.lblnro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,56 +130,6 @@ namespace CarreraSLN.Forms
             this.dgvDetalles.TabIndex = 8;
             this.dgvDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalles_CellContentClick_1);
             // 
-            // btnGrabarPlan
-            // 
-            this.btnGrabarPlan.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnGrabarPlan.Font = new System.Drawing.Font("Segoe UI Black", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnGrabarPlan.Location = new System.Drawing.Point(317, 791);
-            this.btnGrabarPlan.Name = "btnGrabarPlan";
-            this.btnGrabarPlan.Size = new System.Drawing.Size(237, 71);
-            this.btnGrabarPlan.TabIndex = 9;
-            this.btnGrabarPlan.Text = "Aceptar";
-            this.btnGrabarPlan.UseVisualStyleBackColor = false;
-            this.btnGrabarPlan.Click += new System.EventHandler(this.btnGrabarPlan_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI Black", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(663, 791);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(237, 71);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // txtCarreraName
-            // 
-            this.txtCarreraName.Location = new System.Drawing.Point(265, 58);
-            this.txtCarreraName.Name = "txtCarreraName";
-            this.txtCarreraName.Size = new System.Drawing.Size(859, 39);
-            this.txtCarreraName.TabIndex = 11;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI Black", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAgregar.Location = new System.Drawing.Point(845, 280);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(280, 67);
-            this.btnAgregar.TabIndex = 12;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // lblnro
-            // 
-            this.lblnro.AutoSize = true;
-            this.lblnro.Location = new System.Drawing.Point(583, 322);
-            this.lblnro.Name = "lblnro";
-            this.lblnro.Size = new System.Drawing.Size(0, 32);
-            this.lblnro.TabIndex = 13;
-            // 
             // id_detalle
             // 
             this.id_detalle.HeaderText = "Column1";
@@ -218,6 +168,57 @@ namespace CarreraSLN.Forms
             this.Eliminar.Text = "Quitar";
             this.Eliminar.UseColumnTextForButtonValue = true;
             this.Eliminar.Width = 200;
+            // 
+            // btnGrabarPlan
+            // 
+            this.btnGrabarPlan.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnGrabarPlan.Font = new System.Drawing.Font("Segoe UI Black", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGrabarPlan.Location = new System.Drawing.Point(317, 791);
+            this.btnGrabarPlan.Name = "btnGrabarPlan";
+            this.btnGrabarPlan.Size = new System.Drawing.Size(237, 71);
+            this.btnGrabarPlan.TabIndex = 9;
+            this.btnGrabarPlan.Text = "Aceptar";
+            this.btnGrabarPlan.UseVisualStyleBackColor = false;
+            this.btnGrabarPlan.Click += new System.EventHandler(this.btnGrabarPlan_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI Black", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(663, 791);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(237, 71);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Cancelar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtCarreraName
+            // 
+            this.txtCarreraName.Location = new System.Drawing.Point(265, 58);
+            this.txtCarreraName.Name = "txtCarreraName";
+            this.txtCarreraName.Size = new System.Drawing.Size(859, 39);
+            this.txtCarreraName.TabIndex = 11;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI Black", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAgregar.Location = new System.Drawing.Point(845, 280);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(280, 67);
+            this.btnAgregar.TabIndex = 12;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // lblnro
+            // 
+            this.lblnro.AutoSize = true;
+            this.lblnro.Location = new System.Drawing.Point(583, 322);
+            this.lblnro.Name = "lblnro";
+            this.lblnro.Size = new System.Drawing.Size(0, 32);
+            this.lblnro.TabIndex = 13;
             // 
             // FrmNuevoPlanEstudio
             // 

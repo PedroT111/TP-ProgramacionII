@@ -72,9 +72,8 @@ namespace CarreraSLN.Forms
                 if (MessageBox.Show("Seguro que desea eliminar el presupuesto seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     await EliminarCarrerasAsync(nro);
-                }
-
-                dgvCarreras.Rows.Remove(dgvCarreras.CurrentRow);
+                    dgvCarreras.Rows.Remove(dgvCarreras.CurrentRow);
+                }        
 
               
             }

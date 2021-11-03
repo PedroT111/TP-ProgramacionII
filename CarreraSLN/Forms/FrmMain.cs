@@ -16,23 +16,36 @@ namespace CarreraSLN.Forms
         {
             InitializeComponent();
         }
+        private void materiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMaterias frmMateria = new FrmMaterias();
+            frmMateria.ShowDialog();
+        }
 
-        private void planEstudioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmNuevoPlanEstudio frmPlan = new FrmNuevoPlanEstudio(Accion.Create, -1);
             frmPlan.ShowDialog();
         }
 
-        private void planesDeEstudioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmConsultarPlanes frmConsulta = new FrmConsultarPlanes();
             frmConsulta.ShowDialog();
         }
 
-        private void materiaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmMaterias frmMateria = new FrmMaterias();
-            frmMateria.ShowDialog();
+            if (MessageBox.Show("¿Desea salir?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
+        }
+
+        private void informacionDeDesarrolloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmInformacion frmInfo = new FrmInformacion();
+            frmInfo.ShowDialog();
         }
     }
 }
