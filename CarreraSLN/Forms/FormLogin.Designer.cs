@@ -80,6 +80,7 @@ namespace CarreraSLN.Forms
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(323, 39);
             this.txtContraseña.TabIndex = 4;
+            this.txtContraseña.UseSystemPasswordChar = true;
             // 
             // btnIniciarSesion
             // 

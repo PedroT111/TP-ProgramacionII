@@ -47,9 +47,14 @@ namespace CarreraSLN.Forms
             {
                 this.Text = "Editar Plan de Estudio";
                 CargarPlanEstudioPorId(nro);
-                cargarComboMateriasAsync();
+                cargarInfoPlan();
+                ;
             }
             
+        }
+        private async Task cargarInfoPlan()
+        {
+            await cargarComboMateriasAsync();
         }
 
         private async Task CargarPlanEstudioPorId(int nro)
@@ -121,7 +126,6 @@ namespace CarreraSLN.Forms
                 if (success)
                 {
                     MessageBox.Show("Plan de Estudio Registrado!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Dispose();
                 }
                 else
                 {
@@ -131,20 +135,9 @@ namespace CarreraSLN.Forms
             if (modo.Equals(Accion.Update))
             {
                 int id = oCarrera.IdCarrera;                
-                bool success = await EditarPlanEstudioAsync(data, id);
-                if (success)
-                {
-                    MessageBox.Show("Se ha actualizado el Plan de Estudio!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Dispose();
-                }
-                else
-                {
-                    MessageBox.Show("Error al actualizar Plan de Estudio!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
+                await EditarPlanEstudioAsync(data, id);                              
             }
-                
-            
+            this.Dispose();
 
         }
          private async Task<bool> EditarPlanEstudioAsync(string data, int id)
@@ -153,7 +146,7 @@ namespace CarreraSLN.Forms
              using (HttpClient client = new HttpClient())
              {
                  StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
-                 var result = await client.PutAsync(url, content);
+                 var result = await client.PostAsync(url, content);
                  string response = await result.Content.ReadAsStringAsync();
                  return response.Equals("Ok");
              }
@@ -199,15 +192,6 @@ namespace CarreraSLN.Forms
         {
             if (validarCampos())
             {
-                /* foreach (DataGridViewRow row in dgvDetalles.Rows)
-                 {
-                     if (row.Cells["materia"].Value.Equals(cboMaterias.Text))
-                     {
-                         MessageBox.Show("Ya existe la materia en el Plan", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                     }
-
-                 }*/
-
                 Materia oMateria = (Materia)cboMaterias.SelectedItem;
                 DetalleCarrera detalle = new DetalleCarrera();
 
@@ -218,7 +202,17 @@ namespace CarreraSLN.Forms
                 dgvDetalles.Rows.Add(new object[] { oMateria.IdMateria, oMateria.NombreMateria.ToString(), detalle.Cuatrimestre.ToString(), detalle.AnioCursado.ToString() });
             }
         }
- 
+
+        /*private bool ExisteMateriaEnGrilla(string text)
+        {
+            foreach (DataGridViewRow fila in dgvDetalles.Rows)
+            {
+                if (fila.Cells["materia"].Value.Equals(text))
+                    return true;
+            }
+            return false;
+        }*/
+
 
         private void dgvDetalles_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {

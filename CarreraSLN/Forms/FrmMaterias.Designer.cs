@@ -66,7 +66,7 @@ namespace CarreraSLN.Forms
             this.btnCrearMateria.Name = "btnCrearMateria";
             this.btnCrearMateria.Size = new System.Drawing.Size(199, 83);
             this.btnCrearMateria.TabIndex = 2;
-            this.btnCrearMateria.Text = "Crear";
+            this.btnCrearMateria.Text = "Aceptar";
             this.btnCrearMateria.UseVisualStyleBackColor = true;
             this.btnCrearMateria.Click += new System.EventHandler(this.btnCrearMateria_Click);
             // 
@@ -79,6 +79,7 @@ namespace CarreraSLN.Forms
             this.btnEditarMateria.TabIndex = 3;
             this.btnEditarMateria.Text = "Editar";
             this.btnEditarMateria.UseVisualStyleBackColor = true;
+            this.btnEditarMateria.Click += new System.EventHandler(this.btnEditarMateria_Click);
             // 
             // btnEliminarMateria
             // 

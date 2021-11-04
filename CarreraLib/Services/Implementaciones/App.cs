@@ -30,6 +30,11 @@ namespace CarreraLib.Services
             return dao.CrearMateria(oMateria);
         }
 
+        public bool EditarMateria(Materia oMateria)
+        {
+            return dao.EditarMateria(oMateria);
+        }
+
         public bool CrearCarrera(Carrera oCarrera)
         {
             return dao.InsertarCarrera(oCarrera);
@@ -50,14 +55,19 @@ namespace CarreraLib.Services
             return dao.DeleteCarrera(id);
         }
 
-        public bool EditarCarrera(int id, Carrera oCarrera)
+        public bool EditarCarrera(Carrera oCarrera)
         {
-            return dao.EditCarrera(id, oCarrera);
+            return dao.EditCarrera(oCarrera);
         }
 
         public bool DeleteMateria(int id)
         {
             return dao.DeleteMateria(id);
+        }
+
+        public bool LogIn(User oUser)
+        {
+            return dao.LogIn(oUser);
         }
     }
 }

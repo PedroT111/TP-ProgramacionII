@@ -64,7 +64,8 @@ namespace CarreraSLN.Forms
             {
                 int nro = Convert.ToInt32(dgvCarreras.CurrentRow.Cells["nro_carrera"].Value.ToString());
                 FrmNuevoPlanEstudio form = new FrmNuevoPlanEstudio(Accion.Update, nro);
-                form.ShowDialog();
+                form.Show();
+                this.Hide();
             }
             if (dgvCarreras.CurrentCell.ColumnIndex == 4)
             {

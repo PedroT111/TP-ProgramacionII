@@ -59,6 +59,22 @@ namespace CarreraLib.DataAccess
 
         }
 
+        public bool EditarMateria(Materia oMateria)
+        {
+            List<Parametro> parametro = new List<Parametro>();
+            parametro.Add(new Parametro("@id", oMateria.IdMateria));
+            parametro.Add(new Parametro("@nombre", oMateria.NombreMateria));
+
+            bool result = false;
+            int files = HelperDao.GetInstance().ConsultaConParametroEntrada("SP_EDITAR_MATERIA", parametro);
+            if (files == 0)
+            {
+                result = false;
+            }
+
+            return result;
+        }
+
         public bool InsertarCarrera(Carrera oCarrera)
         {
             return HelperDao.GetInstance().EjecutarSQLMaestroDetalle("SP_INSERTAR_CARRERA", "SP_INSERTAR_DETALLE_CARRERA", oCarrera);
@@ -134,9 +150,27 @@ namespace CarreraLib.DataAccess
             return result;
         }
 
-        public bool EditCarrera(int id, Carrera oCarrera)
+        public bool EditCarrera(Carrera oCarrera)
         {
             return HelperDao.GetInstance().EjecutarSQLMaestroDetalle("SP_EDITAR_CARRERA", "SP_INSERTAR_DETALLE_CARRERA", oCarrera);
+        }
+
+        public bool LogIn(User oUser)
+        {
+            List<Parametro> parametro = new List<Parametro>();
+            parametro.Add(new Parametro("@user", oUser.usuario));
+            parametro.Add(new Parametro("@pass", oUser.pass));
+            bool result = true;
+            int files = 0;
+
+            files = HelperDao.GetInstance().ConsultaConParametroEntrada("SP_LOGIN", parametro);
+
+            if (files == 0)
+            {
+                result = false;
+            }
+
+            return result;
         }
     }
 }

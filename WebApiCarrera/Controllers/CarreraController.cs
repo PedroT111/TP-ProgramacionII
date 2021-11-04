@@ -38,6 +38,19 @@ namespace WebApiCarrera.Controllers
                 return Ok("No se pudo grabar la materia");
         }
 
+        [HttpPost("materias/{id}")]
+        public ActionResult PutMateria(Materia oMateria)
+        {
+            if (oMateria == null)
+                return BadRequest();
+            if (app.EditarMateria(oMateria))
+                return Ok("Ok");
+            else
+                return Ok("No se pudo editar la materia");
+        }
+
+
+
         [HttpGet("carreras")]
         public ActionResult GetCarreras()
         {
@@ -67,12 +80,12 @@ namespace WebApiCarrera.Controllers
         {
             return app.getProximoIdCarrera().ToString();
         }
-        [HttpPut("{id}")]
-        public ActionResult EditCarrera(int id, Carrera oCarrera)
+        [HttpPost("{id}")]
+        public ActionResult EditCarrera(Carrera oCarrera)
         {
-            if (id == 0)
+            if (oCarrera.IdCarrera == 0)
                 return BadRequest("Id es requerido!");
-            return Ok(app.EditarCarrera(id, oCarrera));
+            return Ok(app.EditarCarrera(oCarrera));
         }
 
         [HttpDelete("{id}")]
@@ -91,5 +104,19 @@ namespace WebApiCarrera.Controllers
             return Ok(app.DeleteMateria(id));
         }
 
+        [HttpPost("iniciarsesion")]
+        public ActionResult LogIn(User oUser)
+        {
+            if (oUser == null)
+            {
+                return BadRequest();
+            }
+            if (app.LogIn(oUser))
+            {
+                return Ok("Ok");
+            }
+            else
+                return Ok("No se pudo iniciar sesion");
+        }
     }
 }

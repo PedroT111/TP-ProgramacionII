@@ -70,11 +70,15 @@ namespace CarreraLib.DataAccess
         public int ConsultaConParametroEntrada(string nombreSP, List<Parametro> parametros)
         {
             int filas = 0;
+            SqlTransaction trans = null;
+
             try
             {
                 cmd.Parameters.Clear();
                 cnn.Open();
+                trans = cnn.BeginTransaction();
                 cmd.Connection = cnn;
+                cmd.Transaction = trans;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = nombreSP;
 
@@ -84,10 +88,12 @@ namespace CarreraLib.DataAccess
                 }
 
                 filas = cmd.ExecuteNonQuery();
+                trans.Commit();
             }
             catch (Exception)
             {
-                filas=0;
+                trans.Rollback();
+                filas =0;
             }
             finally
             {

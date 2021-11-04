@@ -15,6 +15,8 @@ namespace CarreraSLN.Forms
 {
     public partial class FrmMaterias : Form
     {
+        private Accion modo;
+        Materia oMateria;
         public FrmMaterias()
         {
             InitializeComponent();
@@ -22,6 +24,8 @@ namespace CarreraSLN.Forms
 
         private async void FrmMaterias_Load(object sender, EventArgs e)
         {
+            oMateria = new Materia();
+            modo = Accion.Create;
             await cargarMateriasAsync();
         }
 
@@ -54,7 +58,6 @@ namespace CarreraSLN.Forms
 
         private async void btnCrearMateria_Click(object sender, EventArgs e)
         {
-            
             if (string.IsNullOrEmpty(txtMateria.Text))
             {
                 MessageBox.Show("Ingrese un nombre");
@@ -65,22 +68,25 @@ namespace CarreraSLN.Forms
                 MessageBox.Show("La materia ya esta registrada");
                 return;
             }*/
-            Materia oMateria = new Materia();
-            oMateria.NombreMateria = txtMateria.Text;
-            string data = JsonConvert.SerializeObject(oMateria);
-
-            bool success = await crearNuevaMateriaAsync(data);
-            if (success)
+            if (modo.Equals(Accion.Create))
             {
-                MessageBox.Show("Materia registrada con éxito!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Error al registrar Materia!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                Materia oMateria = new Materia();
+                oMateria.NombreMateria = txtMateria.Text;
+                string data = JsonConvert.SerializeObject(oMateria);
 
-            await cargarMateriasAsync();
-            LimpiarCampos();
+                bool success = await crearNuevaMateriaAsync(data);
+                if (success)
+                {
+                    MessageBox.Show("Materia registrada con éxito!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar Materia!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                LimpiarCampos();
+                await cargarMateriasAsync();
+            }
+                                   
         }
 
         public void LimpiarCampos()
@@ -122,5 +128,23 @@ namespace CarreraSLN.Forms
             }
              
         }
+
+        private void btnEditarMateria_Click(object sender, EventArgs e)
+        {
+            modo = Accion.Update;
+            btnEliminarMateria.Enabled = false;
+        }
+
+       /* public async Task<string> EditarMateriaAsync(int n)
+        {
+            string url = "https://localhost:44361/api/Carrera/asignaturas/" + n.ToString();
+            using (HttpClient client = new HttpClient())
+            {
+                
+                string datos = JsonConvert.SerializeObject(oMateria);
+                var resultado = await client.PostAsync(url, datos);
+                return resultado;
+            }
+        }   */ 
     }
 }
