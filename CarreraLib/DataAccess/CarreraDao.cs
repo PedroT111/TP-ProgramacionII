@@ -61,16 +61,8 @@ namespace CarreraLib.DataAccess
 
         public bool EditarMateria(Materia oMateria)
         {
-            List<Parametro> parametro = new List<Parametro>();
-            parametro.Add(new Parametro("@id", oMateria.IdMateria));
-            parametro.Add(new Parametro("@nombre", oMateria.NombreMateria));
-
             bool result = false;
-            int files = HelperDao.GetInstance().ConsultaConParametroEntrada("SP_EDITAR_MATERIA", parametro);
-            if (files == 0)
-            {
-                result = false;
-            }
+            result = HelperDao.GetInstance().EditarMateriaSQL(oMateria);
 
             return result;
         }

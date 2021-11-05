@@ -218,6 +218,39 @@ namespace CarreraLib.DataAccess
             return val;
         }
 
+        public bool EditarMateriaSQL(Materia oMateria)
+        {
+
+            SqlTransaction transaction = null;
+            bool flag = true;
+
+            try
+            {
+                cnn.Open();
+                transaction = cnn.BeginTransaction();
+                SqlCommand cmd = new SqlCommand("SP_EDITAR_MATERIA", cnn, transaction);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", oMateria.IdMateria);
+                cmd.Parameters.AddWithValue("@nombre", oMateria.NombreMateria);
+                cmd.ExecuteNonQuery();
+
+                transaction.Commit();
+            }
+            catch (Exception)
+            {
+                transaction.Rollback();
+                flag = false;
+                throw;
+            }
+            finally
+            {
+                if (cnn != null && cnn.State == ConnectionState.Open)
+                    cnn.Close();
+            }
+
+            return flag;
+        }
+
 
     }
 }

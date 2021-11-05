@@ -47,7 +47,7 @@ namespace CarreraSLN.Forms
 
         private async Task<bool> IniciarSesionAsync(string data)
         {
-            string url = "https://localhost:5001/api/Carrera/iniciarsesion";
+            string url = "https://localhost:5001/api/Carrera/login";
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(data, Encoding.UTF8, "application/json");

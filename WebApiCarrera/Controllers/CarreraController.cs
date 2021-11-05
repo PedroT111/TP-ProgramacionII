@@ -104,19 +104,19 @@ namespace WebApiCarrera.Controllers
             return Ok(app.DeleteMateria(id));
         }
 
-        [HttpPost("iniciarsesion")]
+        [HttpPost("login")]
         public ActionResult LogIn(User oUser)
         {
             if (oUser == null)
             {
                 return BadRequest();
             }
-            if (app.LogIn(oUser))
+            else if (app.LogIn(oUser))
             {
                 return Ok("Ok");
             }
             else
-                return Ok("No se pudo iniciar sesion");
+                return BadRequest("No se pudo iniciar sesion");
         }
     }
 }

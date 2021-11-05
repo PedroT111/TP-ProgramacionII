@@ -29,6 +29,11 @@ namespace CarreraSLN.Forms
             await cargarMateriasAsync();
         }
 
+        private void LimpiarLista()
+        {
+            dgvMaterias.Columns.Clear();
+        }
+
         private async Task cargarMateriasAsync()
         {
             string url = "https://localhost:5001/api/Carrera/materias";
@@ -86,6 +91,14 @@ namespace CarreraSLN.Forms
                 LimpiarCampos();
                 await cargarMateriasAsync();
             }
+            if (modo.Equals(Accion.Update))
+            {
+                oMateria.NombreMateria = txtMateria.Text;
+                oMateria.IdMateria = Convert.ToInt32(dgvMaterias.CurrentRow.Cells["id_materia"].Value);
+                await EditarMateriaAsync(oMateria.IdMateria);
+                dgvMaterias.Rows.Clear();
+                await cargarMateriasAsync();
+            }
                                    
         }
 
@@ -135,16 +148,17 @@ namespace CarreraSLN.Forms
             btnEliminarMateria.Enabled = false;
         }
 
-       /* public async Task<string> EditarMateriaAsync(int n)
+        public async Task<bool> EditarMateriaAsync(int id)
         {
-            string url = "https://localhost:44361/api/Carrera/asignaturas/" + n.ToString();
+            string url = "https://localhost:5001/api/Carrera/materias/" + id.ToString();
             using (HttpClient client = new HttpClient())
             {
-                
-                string datos = JsonConvert.SerializeObject(oMateria);
-                var resultado = await client.PostAsync(url, datos);
-                return resultado;
+                string data = JsonConvert.SerializeObject(oMateria);
+                StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
+                var resultado = await client.PostAsync(url, content);
+                string response = await resultado.Content.ReadAsStringAsync();
+                return response.Equals("Ok");
             }
-        }   */ 
+        }   
     }
 }
