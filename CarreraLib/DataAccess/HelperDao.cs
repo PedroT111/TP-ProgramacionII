@@ -251,6 +251,53 @@ namespace CarreraLib.DataAccess
             return flag;
         }
 
+        public Carrera GetById(int id)
+        {
+            try
+            {
+                Carrera oCarrera = new Carrera();
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "CARRERA_ID";
+                cmd.Parameters.AddWithValue("@nro", id);
+                SqlDataReader reader = cmd.ExecuteReader();
+                bool esPrimerRegistro = true;
+
+                while (reader.Read())
+                {
+                    if (esPrimerRegistro)
+                    {
+                        oCarrera.IdCarrera = Convert.ToInt32(reader["id_carrera"].ToString());
+                        oCarrera.Nombre = reader["nombre_carrera"].ToString();
+                        esPrimerRegistro = false;
+                    }
+
+                    DetalleCarrera oDetalle = new DetalleCarrera();
+                    Materia oMateria = new Materia();
+                    oMateria.IdMateria = Convert.ToInt32(reader["id_materia"].ToString());
+                    oMateria.NombreMateria = reader["nombre_materia"].ToString();
+                    oDetalle.Materia = oMateria;
+                    oDetalle.AnioCursado = Convert.ToInt32(reader["anio_cursado"].ToString());
+                    oDetalle.Cuatrimestre = Convert.ToInt32(reader["cuatrimestre"].ToString());
+                    esPrimerRegistro = false;
+                    oCarrera.AddDetalle(oDetalle);
+                }
+                
+                return oCarrera;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open) cnn.Close();
+            }
+            
+        }
+
 
     }
 }

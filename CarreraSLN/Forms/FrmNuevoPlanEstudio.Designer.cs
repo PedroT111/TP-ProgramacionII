@@ -37,16 +37,16 @@ namespace CarreraSLN.Forms
             this.txtAnioCursado = new System.Windows.Forms.TextBox();
             this.cboMaterias = new System.Windows.Forms.ComboBox();
             this.dgvDetalles = new System.Windows.Forms.DataGridView();
-            this.id_detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anio_cursado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnGrabarPlan = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtCarreraName = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblnro = new System.Windows.Forms.Label();
+            this.id_detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuatrimestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anio_cursado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,45 +130,6 @@ namespace CarreraSLN.Forms
             this.dgvDetalles.TabIndex = 8;
             this.dgvDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalles_CellContentClick_1);
             // 
-            // id_detalle
-            // 
-            this.id_detalle.HeaderText = "Column1";
-            this.id_detalle.MinimumWidth = 10;
-            this.id_detalle.Name = "id_detalle";
-            this.id_detalle.Visible = false;
-            this.id_detalle.Width = 200;
-            // 
-            // materia
-            // 
-            this.materia.DataPropertyName = "materia";
-            this.materia.HeaderText = "Materia";
-            this.materia.MinimumWidth = 10;
-            this.materia.Name = "materia";
-            this.materia.Width = 200;
-            // 
-            // cuatrimestre
-            // 
-            this.cuatrimestre.HeaderText = "Cuatrimestre";
-            this.cuatrimestre.MinimumWidth = 10;
-            this.cuatrimestre.Name = "cuatrimestre";
-            this.cuatrimestre.Width = 200;
-            // 
-            // anio_cursado
-            // 
-            this.anio_cursado.HeaderText = "Año Cursado";
-            this.anio_cursado.MinimumWidth = 10;
-            this.anio_cursado.Name = "anio_cursado";
-            this.anio_cursado.Width = 200;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Acciones";
-            this.Eliminar.MinimumWidth = 10;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Text = "Quitar";
-            this.Eliminar.UseColumnTextForButtonValue = true;
-            this.Eliminar.Width = 200;
-            // 
             // btnGrabarPlan
             // 
             this.btnGrabarPlan.BackColor = System.Drawing.SystemColors.HighlightText;
@@ -219,6 +180,45 @@ namespace CarreraSLN.Forms
             this.lblnro.Name = "lblnro";
             this.lblnro.Size = new System.Drawing.Size(0, 32);
             this.lblnro.TabIndex = 13;
+            // 
+            // id_detalle
+            // 
+            this.id_detalle.HeaderText = "Column1";
+            this.id_detalle.MinimumWidth = 10;
+            this.id_detalle.Name = "id_detalle";
+            this.id_detalle.Visible = false;
+            this.id_detalle.Width = 200;
+            // 
+            // materia
+            // 
+            this.materia.DataPropertyName = "materia";
+            this.materia.HeaderText = "Materia";
+            this.materia.MinimumWidth = 350;
+            this.materia.Name = "materia";
+            this.materia.Width = 350;
+            // 
+            // cuatrimestre
+            // 
+            this.cuatrimestre.HeaderText = "Cuatrimestre";
+            this.cuatrimestre.MinimumWidth = 220;
+            this.cuatrimestre.Name = "cuatrimestre";
+            this.cuatrimestre.Width = 220;
+            // 
+            // anio_cursado
+            // 
+            this.anio_cursado.HeaderText = "Año Cursado";
+            this.anio_cursado.MinimumWidth = 220;
+            this.anio_cursado.Name = "anio_cursado";
+            this.anio_cursado.Width = 220;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Acciones";
+            this.Eliminar.MinimumWidth = 200;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Text = "Quitar";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            this.Eliminar.Width = 200;
             // 
             // FrmNuevoPlanEstudio
             // 

@@ -39,8 +39,8 @@ namespace CarreraSLN.Forms
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.informacionDeDesarrolloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -129,6 +129,13 @@ namespace CarreraSLN.Forms
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(186, 49);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             // 
+            // informacionDeDesarrolloToolStripMenuItem
+            // 
+            this.informacionDeDesarrolloToolStripMenuItem.Name = "informacionDeDesarrolloToolStripMenuItem";
+            this.informacionDeDesarrolloToolStripMenuItem.Size = new System.Drawing.Size(332, 54);
+            this.informacionDeDesarrolloToolStripMenuItem.Text = "AppCarrera";
+            this.informacionDeDesarrolloToolStripMenuItem.Click += new System.EventHandler(this.informacionDeDesarrolloToolStripMenuItem_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CarreraSLN.Properties.Resources.utn;
@@ -138,13 +145,6 @@ namespace CarreraSLN.Forms
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // informacionDeDesarrolloToolStripMenuItem
-            // 
-            this.informacionDeDesarrolloToolStripMenuItem.Name = "informacionDeDesarrolloToolStripMenuItem";
-            this.informacionDeDesarrolloToolStripMenuItem.Size = new System.Drawing.Size(359, 54);
-            this.informacionDeDesarrolloToolStripMenuItem.Text = "AppCarrera";
-            this.informacionDeDesarrolloToolStripMenuItem.Click += new System.EventHandler(this.informacionDeDesarrolloToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -158,6 +158,7 @@ namespace CarreraSLN.Forms
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMain";
             this.Text = "FrmMain";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

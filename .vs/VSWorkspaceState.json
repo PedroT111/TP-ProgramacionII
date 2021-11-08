@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
     "",
+    "\\CarreraLib",
+    "\\CarreraLib\\DataAccess",
     "\\CarreraSLN",
     "\\CarreraSLN\\Forms"
   ],

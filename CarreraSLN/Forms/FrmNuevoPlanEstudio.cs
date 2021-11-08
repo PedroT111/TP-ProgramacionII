@@ -31,8 +31,7 @@ namespace CarreraSLN.Forms
             this.modo = modo;
 
             if (modo.Equals(Accion.Read))
-            {
-                CargarPlanEstudioPorId(nro);
+            {               
                 txtAnioCursado.Enabled = false;
                 txtCarreraName.Enabled = false;
                 txtCuatrimestre.Enabled = false;
@@ -41,20 +40,20 @@ namespace CarreraSLN.Forms
                 dgvDetalles.Enabled = false;
                 cboMaterias.Enabled = false;
                 this.Text = "Consulta Plan de Estudio";
+                CargarPlanEstudioPorId(nro);
             }
 
             if (modo.Equals(Accion.Update))
             {
                 this.Text = "Editar Plan de Estudio";
-                CargarPlanEstudioPorId(nro);
-                cargarInfoPlan();
-                ;
+                cargarInfoPlan(nro);
             }
             
         }
-        private async Task cargarInfoPlan()
+        private async Task cargarInfoPlan(int nro)
         {
             await cargarComboMateriasAsync();
+            await CargarPlanEstudioPorId(nro);
         }
 
         private async Task CargarPlanEstudioPorId(int nro)
@@ -76,6 +75,7 @@ namespace CarreraSLN.Forms
 
         private async void FrmNuevoPlanEstudio_Load(object sender, EventArgs e)
         {
+            propiedadesGrilla();
             if (modo.Equals(Accion.Create))
             {
                 await cargarComboMateriasAsync();
@@ -135,7 +135,9 @@ namespace CarreraSLN.Forms
             if (modo.Equals(Accion.Update))
             {
                 int id = oCarrera.IdCarrera;                
-                await EditarPlanEstudioAsync(data, id);                              
+                await EditarPlanEstudioAsync(data, id);
+                FrmConsultarPlanes frm = new FrmConsultarPlanes();
+                frm.Show();
             }
             this.Dispose();
 
@@ -193,18 +195,21 @@ namespace CarreraSLN.Forms
             if (validarCampos())
             {
                 Materia oMateria = (Materia)cboMaterias.SelectedItem;
-                DetalleCarrera detalle = new DetalleCarrera();
+               
+                    DetalleCarrera detalle = new DetalleCarrera();
 
-                detalle.AnioCursado = Convert.ToInt32(txtAnioCursado.Text);
-                detalle.Cuatrimestre = Convert.ToInt32(txtCuatrimestre.Text);
-                detalle.Materia = oMateria;
-                oCarrera.AddDetalle(detalle);
-                dgvDetalles.Rows.Add(new object[] { oMateria.IdMateria, oMateria.NombreMateria.ToString(), detalle.Cuatrimestre.ToString(), detalle.AnioCursado.ToString() });
+                    detalle.AnioCursado = Convert.ToInt32(txtAnioCursado.Text);
+                    detalle.Cuatrimestre = Convert.ToInt32(txtCuatrimestre.Text);
+                    detalle.Materia = oMateria;
+                    oCarrera.AddDetalle(detalle);
+                    dgvDetalles.Rows.Add(new object[] { oMateria.IdMateria, oMateria.NombreMateria.ToString(), detalle.Cuatrimestre.ToString(), detalle.AnioCursado.ToString() });
+                
+                
             }
         }
 
         /*private bool ExisteMateriaEnGrilla(string text)
-        {
+        { 
             foreach (DataGridViewRow fila in dgvDetalles.Rows)
             {
                 if (fila.Cells["materia"].Value.Equals(text))
@@ -227,6 +232,13 @@ namespace CarreraSLN.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void propiedadesGrilla()
+        {
+            dgvDetalles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDetalles.AllowUserToAddRows = false;
+            dgvDetalles.RowTemplate.Height = 70;
         }
     } 
 }

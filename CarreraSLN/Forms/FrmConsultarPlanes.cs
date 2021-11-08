@@ -22,6 +22,7 @@ namespace CarreraSLN.Forms
 
         private async void FrmConsultarPlanes_Load(object sender, EventArgs e)
         {
+            propiedadesGrilla();
             await cargarCarrerassAsync();
         }
 
@@ -80,9 +81,18 @@ namespace CarreraSLN.Forms
             }
         }
 
+        private void propiedadesGrilla()
+        {
+            dgvCarreras.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCarreras.AllowUserToAddRows = false;
+            dgvCarreras.RowTemplate.Height = 100;
+        }
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+            FrmConsultarPlanes frm = new FrmConsultarPlanes();
+            frm.ShowDialog();
         }
     }
 }

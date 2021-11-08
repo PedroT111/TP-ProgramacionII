@@ -47,5 +47,12 @@ namespace CarreraSLN.Forms
             FrmInformacion frmInfo = new FrmInformacion();
             frmInfo.ShowDialog();
         }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Dock = DockStyle.Fill;
+        }
     }
 }

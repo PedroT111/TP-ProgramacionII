@@ -56,10 +56,9 @@ namespace CarreraSLN.Forms
             // dgvCarreras
             // 
             this.dgvCarreras.AllowUserToDeleteRows = false;
-            this.dgvCarreras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvCarreras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvCarreras.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvCarreras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCarreras.ColumnHeadersHeight = 46;
+            this.dgvCarreras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCarreras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nro_carrera,
             this.nom_carrera,
@@ -97,41 +96,41 @@ namespace CarreraSLN.Forms
             // nom_carrera
             // 
             this.nom_carrera.HeaderText = "Carrera";
-            this.nom_carrera.MinimumWidth = 135;
+            this.nom_carrera.MinimumWidth = 450;
             this.nom_carrera.Name = "nom_carrera";
             this.nom_carrera.ReadOnly = true;
-            this.nom_carrera.Width = 135;
+            this.nom_carrera.Width = 450;
             // 
             // ver_carrera
             // 
             this.ver_carrera.HeaderText = "";
-            this.ver_carrera.MinimumWidth = 10;
+            this.ver_carrera.MinimumWidth = 130;
             this.ver_carrera.Name = "ver_carrera";
             this.ver_carrera.ReadOnly = true;
             this.ver_carrera.Text = "Ver";
             this.ver_carrera.ToolTipText = "Ver";
             this.ver_carrera.UseColumnTextForButtonValue = true;
-            this.ver_carrera.Width = 33;
+            this.ver_carrera.Width = 130;
             // 
             // edit_carrera
             // 
             this.edit_carrera.HeaderText = "";
-            this.edit_carrera.MinimumWidth = 10;
+            this.edit_carrera.MinimumWidth = 130;
             this.edit_carrera.Name = "edit_carrera";
             this.edit_carrera.ReadOnly = true;
             this.edit_carrera.Text = "Editar";
             this.edit_carrera.UseColumnTextForButtonValue = true;
-            this.edit_carrera.Width = 33;
+            this.edit_carrera.Width = 130;
             // 
             // delete_carrera
             // 
             this.delete_carrera.HeaderText = "";
-            this.delete_carrera.MinimumWidth = 10;
+            this.delete_carrera.MinimumWidth = 130;
             this.delete_carrera.Name = "delete_carrera";
             this.delete_carrera.ReadOnly = true;
             this.delete_carrera.Text = "Eliminar";
             this.delete_carrera.UseColumnTextForButtonValue = true;
-            this.delete_carrera.Width = 33;
+            this.delete_carrera.Width = 130;
             // 
             // FrmConsultarPlanes
             // 

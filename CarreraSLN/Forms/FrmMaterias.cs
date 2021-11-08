@@ -31,7 +31,7 @@ namespace CarreraSLN.Forms
 
         private void LimpiarLista()
         {
-            dgvMaterias.Columns.Clear();
+            dgvMaterias.Rows.Clear();
         }
 
         private async Task cargarMateriasAsync()
@@ -88,6 +88,7 @@ namespace CarreraSLN.Forms
                 {
                     MessageBox.Show("Error al registrar Materia!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                LimpiarLista();
                 LimpiarCampos();
                 await cargarMateriasAsync();
             }
