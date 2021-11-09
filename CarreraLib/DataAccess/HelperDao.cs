@@ -103,7 +103,7 @@ namespace CarreraLib.DataAccess
             return filas;
         }
 
-        public DataTable GetConParametrosEntrada(string sp, List<Parametro> parametros)
+        public DataTable Login(string sp, List<Parametro> parametros)
         {
             DataTable tabla = new DataTable();
             try

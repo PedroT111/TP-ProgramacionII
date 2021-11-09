@@ -71,7 +71,7 @@ namespace CarreraSLN.Forms
             if (dgvCarreras.CurrentCell.ColumnIndex == 4)
             {
                 int nro = Convert.ToInt32(dgvCarreras.CurrentRow.Cells["nro_carrera"].Value.ToString());
-                if (MessageBox.Show("Seguro que desea eliminar el presupuesto seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Desea eliminar el Plan de Estudio?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     await EliminarCarrerasAsync(nro);
                     dgvCarreras.Rows.Remove(dgvCarreras.CurrentRow);

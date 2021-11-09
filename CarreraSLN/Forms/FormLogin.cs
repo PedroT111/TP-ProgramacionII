@@ -56,7 +56,5 @@ namespace CarreraSLN.Forms
                 return response.Equals("Ok");
             }
         }
-
-        //No funciona inicio de sesion
     }
 }
