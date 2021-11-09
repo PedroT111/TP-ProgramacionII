@@ -21,6 +21,12 @@ CONSTRAINT PK_detalle PRIMARY KEY (id_detalle),
 CONSTRAINT FK_det_materia FOREIGN KEY (id_materia) references materias (id_materia),
 CONSTRAINT FK_det_carrera FOREIGN KEY (id_carrera) references carreras (id_carrera))
 
+CREATE TABLE USERS(
+id_usuario int not null,
+usuario varchar(50),
+pass varchar(50),
+CONSTRAINT pk_user PRIMARY KEY (id_usuario))
+
 --STORED PROCEDURE GET MATERIAS
 CREATE PROCEDURE CONSULTAR_MATERIAS
 AS
@@ -66,6 +72,7 @@ INSERT INTO materias values ('Programacion I'), ('Programacion II'),('Programaci
 							('Laboratorio de Videojuegos'), ('Sonido y Musicalización'), ('Práctica Profesionalizante'), ('Animación 2'),
 							('Animación 3'), ('Computación Aplicada')
 INSERT INTO carreras values (1,'Tecnicatura en Programación'), (2,'Analista en Sistemas'), (3,'Tecnicatura en Simulaciones Virtuales')
+INSERT INTO USERS(1, 'grupo6', '123456')
 
 GO
 /****** Object:  StoredProcedure [dbo].[CONSULTAR_CARRERAS]    Script Date: 4/11/2021 18:15:48 ******/
