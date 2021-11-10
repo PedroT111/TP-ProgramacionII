@@ -10,3 +10,15 @@ C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\Carrera
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.dll
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\ref\CarreraLib.dll
 C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.pdb
+D:\Archivos\Proyectos Programación\Git\TP-ProgramacionII\CarreraLib\bin\Debug\net5.0\CarreraLib.deps.json
+D:\Archivos\Proyectos Programación\Git\TP-ProgramacionII\CarreraLib\bin\Debug\net5.0\CarreraLib.dll
+D:\Archivos\Proyectos Programación\Git\TP-ProgramacionII\CarreraLib\bin\Debug\net5.0\ref\CarreraLib.dll
+D:\Archivos\Proyectos Programación\Git\TP-ProgramacionII\CarreraLib\bin\Debug\net5.0\CarreraLib.pdb
+D:\Archivos\Proyectos Programación\Git\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.csproj.AssemblyReference.cache
+D:\Archivos\Proyectos Programación\Git\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Archivos\Proyectos Programación\Git\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.AssemblyInfoInputs.cache
+D:\Archivos\Proyectos Programación\Git\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.AssemblyInfo.cs
+D:\Archivos\Proyectos Programación\Git\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.csproj.CoreCompileInputs.cache
+D:\Archivos\Proyectos Programación\Git\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.dll
+D:\Archivos\Proyectos Programación\Git\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\ref\CarreraLib.dll
+D:\Archivos\Proyectos Programación\Git\TP-ProgramacionII\CarreraLib\obj\Debug\net5.0\CarreraLib.pdb

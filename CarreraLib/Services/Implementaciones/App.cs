@@ -69,5 +69,10 @@ namespace CarreraLib.Services
         {
             return dao.LogIn(oUser);
         }
+
+        public bool Registro(User oUser)
+        {
+            return dao.Registro(oUser);
+        }
     }
 }

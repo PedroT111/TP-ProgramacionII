@@ -194,3 +194,21 @@ SELECT * from carreras c join detalles_carrera dc on c.id_carrera = dc.id_carrer
 join materias m on m.id_materia = dc.id_materia
 WHERE c.id_carrera = @nro
 END
+
+CREATE PROC [dbo].[SP_REGISTRO]
+	@user varchar(50),
+	@pass varchar(50),
+	@exito bit output
+AS
+	IF not exists (SELECT * FROM USERS WHERE usuario=@user)
+	BEGIN
+		INSERT INTO USERS (id_usuario,usuario,pass)
+		VALUES ((select MAX(id_usuario)+1 from USERS),@user,@pass)
+		SELECT @exito = 1
+	END
+	ELSE
+	BEGIN
+		SELECT @exito = 0
+	END
+
+

@@ -454,19 +454,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Win 10\\.nuget\\packages\\": {}
+    "D:\\Users\\augus\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Win 10\\Desktop\\Tp\\TP-ProgramacionII\\CarreraLib\\CarreraLib.csproj",
+      "projectUniqueName": "D:\\Archivos\\Proyectos Programación\\Git\\TP-ProgramacionII\\CarreraLib\\CarreraLib.csproj",
       "projectName": "CarreraLib",
-      "projectPath": "C:\\Users\\Win 10\\Desktop\\Tp\\TP-ProgramacionII\\CarreraLib\\CarreraLib.csproj",
-      "packagesPath": "C:\\Users\\Win 10\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Win 10\\Desktop\\Tp\\TP-ProgramacionII\\CarreraLib\\obj\\",
+      "projectPath": "D:\\Archivos\\Proyectos Programación\\Git\\TP-ProgramacionII\\CarreraLib\\CarreraLib.csproj",
+      "packagesPath": "D:\\Users\\augus\\.nuget\\packages\\",
+      "outputPath": "D:\\Archivos\\Proyectos Programación\\Git\\TP-ProgramacionII\\CarreraLib\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Win 10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "D:\\Users\\augus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
