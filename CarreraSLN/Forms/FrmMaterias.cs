@@ -68,7 +68,7 @@ namespace CarreraSLN.Forms
                 MessageBox.Show("Ingrese un nombre");
                 return;
             }
-            /*if (existeMateria(txtMateria.Text.ToString()))
+            /*if (existeMateria())
             {
                 MessageBox.Show("La materia ya esta registrada");
                 return;
@@ -112,16 +112,16 @@ namespace CarreraSLN.Forms
         {
             this.Dispose();
         }
-        /*private bool existeMateria(string text)
+        /*private bool existeMateria()
         {
             foreach (DataGridViewRow item in dgvMaterias.Rows)
             {
-                if (item.Cells["nombre_materia"].Value.Equals(text))
+                if (item.Cells["nombre_materia"].Value.ToString().Equals(txtMateria.Text))
                     return true;
             }
             return false;
-        }
-        */
+        }*/
+        
         private async Task EliminarMateriaAsync(int id)
         {
             string url = "https://localhost:5001/api/Carrera/materias/" + id.ToString();

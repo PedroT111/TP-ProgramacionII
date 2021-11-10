@@ -189,6 +189,15 @@ namespace CarreraSLN.Forms
                 txtCuatrimestre.Focus();
                 return false;
             }
+            foreach (DataGridViewRow fila in dgvDetalles.Rows)
+            {
+                if (fila.Cells["materia"].Value.ToString().Equals(cboMaterias.Text))
+                {
+                    MessageBox.Show("La materia ya se encuentra en el Plan", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return false;
+                }
+                   
+            }
             return true;
         }
 
@@ -208,18 +217,7 @@ namespace CarreraSLN.Forms
 
 
             }
-        }
-
-        /*private bool ExisteMateriaEnGrilla(string text)
-        { 
-            foreach (DataGridViewRow fila in dgvDetalles.Rows)
-            {
-                if (fila.Cells["materia"].Value.Equals(text))
-                    return true;
-            }
-            return false;
-        }*/
-
+        }  
 
         private void dgvDetalles_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
