@@ -7,4 +7,8 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = CarreraLib
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Win 10\Desktop\Tp\TP-ProgramacionII\CarreraLib\
+=======
+build_property.ProjectDir = D:\Archivos\Proyectos Programación\Git\TP-ProgramacionII\CarreraLib\
+>>>>>>> 64016fdd08abbf86ff82bdd85861ff12377c799d

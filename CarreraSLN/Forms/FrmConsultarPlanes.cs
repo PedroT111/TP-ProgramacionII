@@ -85,14 +85,12 @@ namespace CarreraSLN.Forms
         {
             dgvCarreras.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCarreras.AllowUserToAddRows = false;
-            dgvCarreras.RowTemplate.Height = 100;
+            dgvCarreras.RowTemplate.Height = 43;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            FrmConsultarPlanes frm = new FrmConsultarPlanes();
-            frm.ShowDialog();
         }
     }
 }

@@ -509,19 +509,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Win 10\\.nuget\\packages\\": {}
+    "D:\\Users\\augus\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Win 10\\Desktop\\Tp\\TP-ProgramacionII\\CarreraSLN\\CarreraSLN.csproj",
+      "projectUniqueName": "D:\\Archivos\\Proyectos Programación\\Git\\TP-ProgramacionII\\CarreraSLN\\CarreraSLN.csproj",
       "projectName": "CarreraSLN",
-      "projectPath": "C:\\Users\\Win 10\\Desktop\\Tp\\TP-ProgramacionII\\CarreraSLN\\CarreraSLN.csproj",
-      "packagesPath": "C:\\Users\\Win 10\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Win 10\\Desktop\\Tp\\TP-ProgramacionII\\CarreraSLN\\obj\\",
+      "projectPath": "D:\\Archivos\\Proyectos Programación\\Git\\TP-ProgramacionII\\CarreraSLN\\CarreraSLN.csproj",
+      "packagesPath": "D:\\Users\\augus\\.nuget\\packages\\",
+      "outputPath": "D:\\Archivos\\Proyectos Programación\\Git\\TP-ProgramacionII\\CarreraSLN\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Win 10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "D:\\Users\\augus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -535,8 +540,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Win 10\\Desktop\\Tp\\TP-ProgramacionII\\CarreraLib\\CarreraLib.csproj": {
-              "projectPath": "C:\\Users\\Win 10\\Desktop\\Tp\\TP-ProgramacionII\\CarreraLib\\CarreraLib.csproj"
+            "D:\\Archivos\\Proyectos Programación\\Git\\TP-ProgramacionII\\CarreraLib\\CarreraLib.csproj": {
+              "projectPath": "D:\\Archivos\\Proyectos Programación\\Git\\TP-ProgramacionII\\CarreraLib\\CarreraLib.csproj"
             }
           }
         }

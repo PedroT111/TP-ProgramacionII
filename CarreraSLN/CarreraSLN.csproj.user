@@ -19,5 +19,8 @@
     <Compile Update="Forms\FrmNuevoPlanEstudio.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\FrmRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

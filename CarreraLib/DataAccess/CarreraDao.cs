@@ -135,5 +135,10 @@ namespace CarreraLib.DataAccess
 
             return result;
         }
+
+        public bool Registro(User oUser)
+        {
+            return HelperDao.GetInstance().Registro("SP_REGISTRO", oUser);
+        }
     }
 }

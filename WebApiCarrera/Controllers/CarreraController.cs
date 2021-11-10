@@ -118,5 +118,20 @@ namespace WebApiCarrera.Controllers
             else
                 return BadRequest("No se pudo iniciar sesion");
         }
+
+        [HttpPost("registro")]
+        public ActionResult Registro(User oUser)
+        {
+            if (oUser == null)
+            {
+                return BadRequest();
+            }
+            else if (app.Registro(oUser))
+            {
+                return Ok("Ok");
+            }
+            else
+                return BadRequest("No se pudo registrar");
+        }
     }
 }

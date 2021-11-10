@@ -56,5 +56,12 @@ namespace CarreraSLN.Forms
                 return response.Equals("Ok");
             }
         }
+
+        private void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            FrmRegistro registroForm = new FrmRegistro();
+            this.Hide();
+            registroForm.Show();
+        }
     }
 }

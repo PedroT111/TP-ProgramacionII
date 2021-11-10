@@ -29,5 +29,6 @@ namespace CarreraLib.DataAccess
         public bool EditCarrera(Carrera oCarrera);
 
         public bool LogIn(User oUser);
+        bool Registro(User oUser);
     }
 }

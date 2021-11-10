@@ -21,7 +21,7 @@ namespace CarreraLib.DataAccess
 
         private HelperDao()
         {
-            strConnection = @"Data Source=DESKTOP-0QHUI5R\SQLEXPRESS;Initial Catalog=TP_PROGII2;Integrated Security=True";
+            strConnection = @"Data Source=localhost;Initial Catalog=TP_PROGII2;Integrated Security=True";
             cnn = new SqlConnection(strConnection);
             cmd = new SqlCommand();
         }
@@ -183,7 +183,48 @@ namespace CarreraLib.DataAccess
 
             return ok;
         }
-               
+
+        public bool Registro(string sp, User oUser)
+        {
+            SqlParameter param = new SqlParameter();
+            int val;
+
+            try
+            {
+                cmd.Parameters.Clear();
+                cnn.Open();
+                cmd.Connection = cnn;
+                cmd.CommandText = sp;
+                cmd.CommandType = CommandType.StoredProcedure;
+                param.ParameterName = "@exito";
+                param.SqlDbType = SqlDbType.Bit;
+                param.Direction = ParameterDirection.Output;
+
+                cmd.Parameters.AddWithValue("@user", oUser.usuario);
+                cmd.Parameters.AddWithValue("@pass", oUser.pass);
+                cmd.Parameters.Add(param);
+                cmd.ExecuteNonQuery();
+                val = Convert.ToInt32(param.Value);
+            }
+            catch (Exception)
+            {
+                val = 0;
+            }
+            finally
+            {
+                if (cnn != null && cnn.State == ConnectionState.Open) cnn.Close();
+            }
+            
+            if (val.Equals(0))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public int EjecutarSQLConValorOUT(string nombreSP, string nombreParametro)
         {
             SqlParameter param = new SqlParameter(nombreParametro, SqlDbType.Int);

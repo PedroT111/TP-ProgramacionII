@@ -31,12 +31,12 @@ namespace CarreraSLN.Forms
         {
             this.btnCerrar = new System.Windows.Forms.Button();
             this.dgvCarreras = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.nro_carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom_carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ver_carrera = new System.Windows.Forms.DataGridViewButtonColumn();
             this.edit_carrera = new System.Windows.Forms.DataGridViewButtonColumn();
             this.delete_carrera = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarreras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,9 +45,10 @@ namespace CarreraSLN.Forms
             this.btnCerrar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnCerrar.Font = new System.Drawing.Font("Segoe UI Black", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCerrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCerrar.Location = new System.Drawing.Point(410, 661);
+            this.btnCerrar.Location = new System.Drawing.Point(221, 310);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(278, 79);
+            this.btnCerrar.Size = new System.Drawing.Size(150, 37);
             this.btnCerrar.TabIndex = 1;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
@@ -56,8 +57,11 @@ namespace CarreraSLN.Forms
             // dgvCarreras
             // 
             this.dgvCarreras.AllowUserToDeleteRows = false;
+            this.dgvCarreras.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCarreras.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvCarreras.ColumnHeadersHeight = 46;
+            this.dgvCarreras.ColumnHeadersHeight = 43;
             this.dgvCarreras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCarreras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nro_carrera,
@@ -65,24 +69,14 @@ namespace CarreraSLN.Forms
             this.ver_carrera,
             this.edit_carrera,
             this.delete_carrera});
-            this.dgvCarreras.Location = new System.Drawing.Point(66, 165);
+            this.dgvCarreras.Location = new System.Drawing.Point(36, 77);
+            this.dgvCarreras.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dgvCarreras.Name = "dgvCarreras";
             this.dgvCarreras.ReadOnly = true;
             this.dgvCarreras.RowHeadersWidth = 82;
-            this.dgvCarreras.RowTemplate.Height = 41;
-            this.dgvCarreras.Size = new System.Drawing.Size(931, 456);
+            this.dgvCarreras.Size = new System.Drawing.Size(501, 214);
             this.dgvCarreras.TabIndex = 2;
             this.dgvCarreras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarreras_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(311, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(440, 65);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Planes de Estudio";
             // 
             // nro_carrera
             // 
@@ -91,7 +85,6 @@ namespace CarreraSLN.Forms
             this.nro_carrera.Name = "nro_carrera";
             this.nro_carrera.ReadOnly = true;
             this.nro_carrera.Visible = false;
-            this.nro_carrera.Width = 10;
             // 
             // nom_carrera
             // 
@@ -104,7 +97,6 @@ namespace CarreraSLN.Forms
             // ver_carrera
             // 
             this.ver_carrera.HeaderText = "";
-            this.ver_carrera.MinimumWidth = 130;
             this.ver_carrera.Name = "ver_carrera";
             this.ver_carrera.ReadOnly = true;
             this.ver_carrera.Text = "Ver";
@@ -115,7 +107,6 @@ namespace CarreraSLN.Forms
             // edit_carrera
             // 
             this.edit_carrera.HeaderText = "";
-            this.edit_carrera.MinimumWidth = 130;
             this.edit_carrera.Name = "edit_carrera";
             this.edit_carrera.ReadOnly = true;
             this.edit_carrera.Text = "Editar";
@@ -125,22 +116,33 @@ namespace CarreraSLN.Forms
             // delete_carrera
             // 
             this.delete_carrera.HeaderText = "";
-            this.delete_carrera.MinimumWidth = 130;
             this.delete_carrera.Name = "delete_carrera";
             this.delete_carrera.ReadOnly = true;
             this.delete_carrera.Text = "Eliminar";
             this.delete_carrera.UseColumnTextForButtonValue = true;
             this.delete_carrera.Width = 130;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(167, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(219, 32);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Planes de Estudio";
+            // 
             // FrmConsultarPlanes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1082, 771);
+            this.ClientSize = new System.Drawing.Size(583, 361);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvCarreras);
             this.Controls.Add(this.btnCerrar);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "FrmConsultarPlanes";
             this.Text = "ConsultarPlanes";
             this.Load += new System.EventHandler(this.FrmConsultarPlanes_Load);

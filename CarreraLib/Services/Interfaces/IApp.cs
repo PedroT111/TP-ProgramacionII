@@ -28,5 +28,6 @@ namespace CarreraLib.Services
         public bool EditarCarrera(Carrera oCarrera);
 
         public bool LogIn(User oUser);
+        bool Registro(User oUser);
     }
 }
